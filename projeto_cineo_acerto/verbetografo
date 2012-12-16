@@ -1,0 +1,57 @@
+CREATE DATABASE  IF NOT EXISTS `CONSMATIC` /*!40100 DEFAULT CHARACTER SET latin1 */;
+USE `CONSMATIC`;
+-- MySQL dump 10.13  Distrib 5.5.16, for Win32 (x86)
+--
+-- Host: 127.0.0.1    Database: CONSMATIC
+-- ------------------------------------------------------
+-- Server version	5.5.12
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `verbetografos`
+--
+
+DROP TABLE IF EXISTS `enciclopedia_verbetografo`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `enciclopedia_verbetografo` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `iniciais` varchar(15) DEFAULT NULL,
+  `nome` varchar(50) NOT NULL,
+  `ano_nascimento` smallint(6) DEFAULT NULL,
+  `curriculum` text,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `nome_UNIQUE` (`nome`)
+) ENGINE=MyISAM AUTO_INCREMENT=119 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `enciclopedia_verbetografos`
+--
+
+LOCK TABLES `enciclopedia_verbetografo` WRITE;
+/*!40000 ALTER TABLE `enciclopedia_verbetografos` DISABLE KEYS */;
+INSERT INTO `enciclopedia_verbetografos` VALUES (1,'W. V.','Waldo Vieira',1932,NULL),(2,'A. L.','Adriana Lopes',1965,'Professora, graduada em Engenharia e Psicologia, pós-graduada em Análise de Sistemas, Especialista em Psicologia Clínico-Institucional; brasileira,natural do Rio de Janeiro, RJ; voluntária da Conscienciologia desde 1995; docente em Conscienciologia desde 1999; consciencioterapeuta de 2000 a 2007; tenepessista desde julho de 2002; epicon desde julho de 2010.'),(3,'C. B.','Maria Cristina Bassanesi',1952,'Bioquímica, graduada em Farmácia-Bioquímica, Mestre em Ciências Biológicas-Bioquímica; brasileira, natural de Caxias do Sul, RS; voluntária da Conscienciologia desde 1994; docente em Conscienciologia de 2001 a 2007; tenepessista desde janeiro de 1995.'),(4,'C. C.','Cathia Caporali',1977,'Psicóloga; brasileira, natural de Rolândia, PR; voluntária da Conscienciologia desde 2002; tenepessista desde abril de 2008.'),(5,'D. D.','Dulce Daou',1956,'Pesquisadora e administradora, graduada em Arquitetura e Urbanismo, Especialista em Administração (MBA), Especialista em Educação; brasileira, natural de Manaus, AM; voluntária da Conscienciologia desde 1995; docente em Conscienciologia de 1999 a 2002 e desde 2004; autora do livro Autoconsciência e Multidimensionalidade (2005); tenepessista desde março de 2000.'),(6,'E. M.','Eduardo Martins Balthazar',1973,'Médico, Especialista em Cardiologia; brasileiro, natural de Criciúma, SC; voluntário da Conscienciologia desde 1994; docente em Conscienciologia desde 1997; tenepessista desde outubro de 1999.'),(7,'F. A.','Flávio Amaral',1979,'Professor universitário, graduado em Economia; brasileiro, natural de Goiânia, GO; voluntário da Conscienciologia desde 1999; docente em Conscienciologia desde 2000; tenepessista desde agosto de 2003.'),(8,'F. B.','Flávio Buononato',1963,'Professor universitário, graduado em Administração; brasileiro, natural de São Paulo, SP; voluntário da Conscienciologia desde 1998; docente em Conscienciologia desde 1998; tenepessista desde agosto de 2006.'),(9,'F. S.','Fátima Soares',1968,'Professora universitária, graduada em Psicologia, Mestre em Administração; brasileira, natural de Campo Alegre Delourdes, BA; voluntária da Conscienciologia desde 1995; docente em Conscienciologia desde 1996; consciencioterapeuta desde 1999; tenepessista desde outubro de 2003.'),(10,'H. L.','Hernande Leite',1958,'Médico e empresário, Especialista em Cardiologia, Especialista em Psicossomática; brasileiro, natural de Aracaju, SE; voluntário da Conscienciologia desde 1994; docente em Conscienciologia desde 1995; tenepessista desde agosto de 1998; epicon desde março de 2001.'),(11,'K. A.','Kátia Porto Arakaki',1971,'Psicóloga, Especialista em Psicoterapia Breve Integrada; brasileira, natural do Rio de Janeiro, RJ; voluntária da Conscienciologia desde 1995; docente em Conscienciologia desde 1996; autora do livro Viagens Internacionais: O Nomadismo da Conscienciologia (2005); tenepessista desde fevereiro de 2008.'),(12,'L. L.','Leandro Martins Leporace',1974,'Psicólogo; natural do Rio de Janeiro, RJ; voluntário da Conscienciologia desde 1999.'),(13,'M. B.','Munir Bazzi',1979,'Médico; brasileiro, natural de Ponta Grossa, PR; voluntário da Conscienciologia desde 2000; docente em Conscienciologia desde 2001.'),(14,'N. C.','Neida Cardozo',1954,'Professora do Ensino Médio, Bacharel em Ciências com Licenciatura Plena em Matemática; brasileira, natural de Alegrete, RS; voluntária da Conscienciologia desde 2004; docente em Conscienciologia desde 2004; tenepessista desde fevereiro de 2003.'),(15,'N. M.','Ninarosa Mozzato da Silva Manfroi',1965,'Professora universitária, doutoranda em História Cultural; brasileira, natural de Passo Fundo, RS; voluntária da Conscienciologia desde 1997; docente em Conscienciologia desde 2003; co-autora dos livros O Ciclo de Vida Kaingáng (antologia, 2004), Jogo de Memória Kaingáng: Uma Maneira Lúdica de Preservar (2005) e Ouvir Memórias Contar Histórias: Mitos e Lendas Kaingáng (2006); tenepessista desde setembro de 1997.'),(16,'N. O.','Nilse de Oliveira',1957,'Consultora administradora, graduada em Matemática, pós-graduada em Análise de Sistemas, Especialista em Psicopedagogia; brasileira, natural de São Pedro da União, MG; voluntária da Conscienciologia desde 1999; docente em Conscienciologia desde 2002; tenepessista desde outubro de 2000.'),(17,'P. M.','Phelipe Abib Mansur',1983,'Empresário, graduado em Administração; brasileiro, natural de Curitiba, PR; voluntário da Conscienciologia desde 2002; docente em Conscienciologia desde 2003; tenepessista desde dezembro de 2007; epicon desde junho de 2008.'),(18,'R. N.','Rosa Nader',1951,'Professora universitária, licenciada em Matemática, Doutora em Engenharia de Sistemas e Computação; brasileira, natural de São Fidélis, RJ; voluntária da Conscienciologia desde 1997; docente em Conscienciologia desde 2005; tenepessista desde janeiro de 2000.'),(19,'A. F.','Antonio Fontenele',NULL,NULL),(20,'L. A.','Luiz Fernando Antunes',NULL,NULL),(21,'F. R.','Flávia Rogick',1963,NULL),(22,'A. L. R.','Adriana de Lacerda Rocha',NULL,NULL),(23,'T. M.','Tony Musskopf',NULL,NULL),(24,'P. F.','Pedro Fernandes',NULL,NULL),(25,'M. I. T.','Mabel I. Teles',NULL,NULL),(26,'P. A.','Pilar Alegre',1940,NULL),(27,'R. R.','Rosa Ramalho',NULL,NULL),(28,'A. D','Aline Dalsgaard Niemayer',NULL,NULL),(29,'R. O.','Roseli Oliveira',NULL,NULL),(30,'S. T.','Sandra Tornieri',NULL,NULL),(31,'T. G.','Tânia Guimaraes',1947,NULL),(32,'M. T.','Marina Thomaz',1953,NULL),(33,'G. L.','Goretti Lopes',1956,NULL),(34,'D. R.','Dayane Rossa',1975,NULL),(35,'J. L. P.','Jayme Pereira',NULL,NULL),(36,'T. A.','Thiago André',1986,NULL),(37,'C. F.','Cristiane Ferraro',NULL,NULL),(38,'L. S.','Laura Sánchez',1968,NULL),(39,'A. B. O.','Amy Bello Oliveira',NULL,NULL),(40,'J. P.','Joao Paulo Costa',1970,NULL),(41,'M. S.','Myriam Sanchez',1968,NULL),(42,'D. F.','Djalma Fonseca',1963,NULL),(43,'I. H.','Igor Habib',NULL,NULL),(44,'I. C.','Ivone Cubarenco',NULL,NULL),(45,'M. H.','Maximiliano Haymann',1973,NULL),(46,'M. C.','Michel Chad',NULL,NULL),(47,'A. B.','Aline Bittencourt',NULL,NULL),(48,'E. Q.','Eliel Queiroz',NULL,NULL),(49,'A. P.','Antônio Pitaguari',NULL,NULL),(50,'E. B.','Everaldo Bergonzini',1963,NULL),(51,'V. P.','Vassiliki Pétalas',NULL,NULL),(52,'A. G.','Alzira Gesing',NULL,NULL),(53,'J. A.','Joao Aurélio Bonassi',1968,NULL),(54,'A. C. D.','Alvarez Costa Dantas',NULL,NULL),(55,'R. A.','Roberto Almeida',1970,NULL),(56,'A. C. G.','Adriana Chalita Gomes',NULL,NULL),(57,'A. A.','Arlindo Alcadipani',NULL,NULL),(58,'A. A. L.','André Abs Lima',1973,NULL),(59,'A. C.','Alba Cardoso',1973,NULL),(60,'A. N.','Alexandre Nonato',NULL,NULL),(61,'A. R.','Ana Rocha',NULL,NULL),(62,'A. Z.','Alexandre Zaslavsky',NULL,NULL),(63,'C. A.','Cristina Arakaki',NULL,NULL),(64,'E. M. M.','Eliana Maria Manfroi',NULL,NULL),(65,'L. E.','Luiz Espósito',NULL,NULL),(66,'L. L. J.','Lâenio Loche Jr.',NULL,NULL),(67,'L. Z.','Lílian Zolet',NULL,NULL),(68,'M. K.','Marlene Koller',1949,NULL),(69,'R. L.','Roberto Leimig',1970,NULL),(70,'S. B.','Sandro Battistella',NULL,NULL),(71,'I. F.','Izilda Fresiansd',NULL,NULL),(72,'E. D.','Eucárdio Derrosso',1944,NULL),(73,'M. R.','Marta Ramiro',NULL,NULL),(74,'S. F.','Socorro Frazão',NULL,NULL),(75,'E. R.','Elizabeth Rodrigues',1956,NULL),(76,'C. M.','Cláudio Monteiro',NULL,NULL),(77,'L. F.','Leonardo Firmato',NULL,NULL),(78,'E. S.','Everton Santos',1961,NULL),(79,'A. S. L.','Amim Simon Lascani',NULL,NULL),(80,'T. C. A.','Tamara Cardoso André',NULL,NULL),(81,'M. O.','Magali Ornelas',NULL,NULL),(82,'A. P. S.','Adriane Pereira',1970,NULL),(83,'M. A.','Marilza Andrade',1942,NULL),(84,'C. G. C.','Cesar Thiago Gonçalves Cordioli',NULL,NULL),(85,'A. K.','Adriana Kauati',NULL,NULL),(86,'M. C. N.','Maria Cristina Nievas',NULL,NULL),(87,'C. L.','Cristina Laura Visintin',NULL,NULL),(88,'S. Z.','Simone Zolet',NULL,NULL),(89,'R. V.','Rosemere Victoriano',1959,NULL),(90,'L. O.','Lindalva Oliveira (Dalva)',NULL,NULL),(91,'O. B. J.','Olegário',NULL,NULL),(92,'R. S.','Rômulo Silva',NULL,NULL),(93,'M. I. C.','Maria Izabel Conceição ',NULL,NULL),(94,'M. S. R.','Márcia Ramm',NULL,NULL),(95,'I. R.','Ivan Ramos',NULL,NULL),(96,'E. E.','Eliana Esquiante',NULL,NULL),(97,'M. M.','Milena Mascarenhas',NULL,NULL),(98,'L. G.','Lane Galdino (Wanderlane Galdino)',NULL,NULL),(99,'W. S.','Wildenilson Sinhorini',NULL,NULL),(100,'E. V.','Everton',1961,NULL),(101,'O. M.','Otto Mendonça',NULL,NULL),(102,'A. A. G.','Antonio Augusto',NULL,NULL),(104,'I. M.','Isabel Manfroi',NULL,NULL),(105,'M. R. C.','Maria Regina Camarano',NULL,NULL),(106,'M. M. M.','Mariana Molina',1981,NULL),(107,'M. D.','M. D.',NULL,NULL),(108,'R. S. R.','R. S. R.',NULL,NULL),(109,'G. V. V.','Graça Ventura',NULL,NULL),(110,'A. D.','A. D.',NULL,NULL),(111,'M. P.','M. P.',NULL,NULL),(112,'S. M.','S. M.',NULL,NULL),(113,'A. Q.','A. Q.',NULL,NULL),(114,'L. G. L.','L. G. L.',NULL,NULL),(115,'V. T. S.','V. T. S.',NULL,NULL),(116,'A. G. A.','A. G. A.',NULL,NULL),(117,'A. L. D.','A. L. D.',NULL,NULL),(118,'R. K.','R. K.',NULL,NULL);
+/*!40000 ALTER TABLE `enciclopedia_verbetografos` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2012-01-12 16:23:20

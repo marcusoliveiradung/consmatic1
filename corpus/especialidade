@@ -1,0 +1,54 @@
+CREATE DATABASE  IF NOT EXISTS `CONSMATIC` /*!40100 DEFAULT CHARACTER SET latin1 */;
+USE `CONSMATIC`;
+-- MySQL dump 10.13  Distrib 5.5.16, for Win32 (x86)
+--
+-- Host: 127.0.0.1    Database: CONSMATIC
+-- ------------------------------------------------------
+-- Server version	5.5.12
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `corpus_especialidade`
+--
+
+DROP TABLE IF EXISTS `corpus_especialidade`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `corpus_especialidade` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `especialidade` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `INDX01` (`especialidade`)
+) ENGINE=MyISAM AUTO_INCREMENT=366 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `corpus_especialidade`
+--
+
+LOCK TABLES `corpus_especialidade` WRITE;
+/*!40000 ALTER TABLE `corpus_especialidade` DISABLE KEYS */;
+INSERT INTO `corpus_especialidade` VALUES (1,'Acidentologia'),(2,'Adaptaciologia'),(3,'Administraciologia'),(4,'Administrativologia'),(5,'Ageneticologia'),(6,'Alternanciologia'),(7,'Ambiguologia'),(8,'Amparologia'),(9,'Analiticologia'),(10,'Anonimatologia'),(11,'Antievoluciologia'),(12,'Antipesquisologia'),(13,'Antipoliticologia'),(14,'Antipriorologia'),(15,'Antiproexologia'),(16,'Antirrecexologia'),(17,'Apriorismologia'),(18,'Arcaismologia'),(19,'Argumentologia'),(20,'Assincronologia'),(21,'Assistenciologia'),(22,'Associaciologia'),(23,'Atilamentologia'),(24,'Autassediologia'),(25,'Autenganologia'),(26,'Autevoluciologia'),(27,'Autexperimentologia'),(28,'Autocogniciologia'),(29,'Autoconscienciogramologia'),(30,'Autoconscienciologia'),(31,'Autoconscienciometrologia'),(32,'Autoconsciencioterapia'),(33,'Autoconviviologia'),(34,'Autocosmoeticologia'),(35,'Autocriticologia'),(36,'Autodecidologia'),(37,'Autodefinologia'),(38,'Autodespertologia'),(39,'Autodeterminologia'),(40,'Autodidaticologia'),(41,'Autodiscernimentologia'),(42,'Autodisciplinologia'),(43,'Autolucidologia'),(44,'Automagnanimologia'),(45,'Automaturologia'),(46,'Automimeticologia'),(47,'Autonomologia'),(48,'Autoparaconscienciometrologia'),(49,'Autoparageneticologia'),(50,'Autoparapercepciologia'),(51,'Autoparapesquisologia'),(52,'Autopensenologia'),(53,'Autopercucienciologia'),(54,'Autopesquisologia'),(55,'Autopolicarmologia'),(56,'Autopriorologia'),(57,'Autoproexogramologia'),(58,'Autoproexologia'),(59,'Autoprospecciologia'),(60,'Autorganizaciologia'),(61,'Autorraciocinologia'),(62,'Autorrealismologia'),(63,'Autorrecexologia'),(64,'Autorregressiologia'),(65,'Autorretrocessologia'),(66,'Autorretrocogniciologia'),(67,'Autorrevezamentologia'),(68,'Autosseriexologia'),(69,'Autossomatologia'),(70,'Autotrafarologia'),(71,'Autovoliciologia'),(72,'Binomiologia'),(73,'Caracterologia'),(74,'Catalisologia'),(75,'Cerebelologia'),(76,'Cerebrologia'),(77,'Civilizaciologia'),(78,'Cogniciologia'),(79,'Coloquiologia'),(80,'Compreensiologia'),(81,'Comunicologia'),(82,'Conexologia'),(83,'Confianciologia'),(84,'Conflitologia'),(85,'Confluenciologia'),(86,'Conformática'),(88,'Conscienciocentrologia'),(89,'Conscienciografologia'),(90,'Conscienciometrologia'),(91,'Consciencioterapia'),(92,'Constanciologia'),(93,'Contradiciologia'),(94,'Contrariologia'),(95,'Conviviologia'),(96,'Cosmocogniciologia'),(97,'Cosmoconscienciologia'),(98,'Cosmoeticologia'),(99,'Cosmossintesologia'),(100,'Cosmovisiologia'),(101,'Crescendologia'),(102,'Debatologia'),(103,'Definologia'),(104,'Demagogiologia'),(105,'Desafiologia'),(106,'Desassediologia'),(107,'Descrenciologia'),(108,'Despertologia'),(109,'Dessomatologia'),(110,'Direitologia'),(111,'Discernimentologia'),(112,'Duplocarmologia'),(113,'Duplologia'),(114,'Ecologia'),(115,'Efeitologia'),(116,'Egocarmologia'),(117,'Egologia'),(118,'Elencologia'),(119,'Energossomatologia'),(120,'Enumerologia'),(121,'Errologia'),(122,'Erudiciologia'),(123,'Espermatologia'),(124,'Estilística'),(125,'Estilística'),(126,'Estilologia'),(127,'Etiologia'),(128,'Etologia'),(129,'Evoluciogia'),(130,'Evoluciologia'),(131,'Exaustivologia'),(132,'Exegeticologia'),(133,'Exemplologia'),(134,'Experimentologia'),(135,'Extrafisicologia'),(136,'Falaciologia'),(137,'Fatuística'),(138,'Fatuística'),(139,'Fenomenologia'),(140,'Geopoliticologia'),(141,'Gerontocerebrologia'),(142,'Gerontologia'),(143,'Grafopensenologia'),(144,'Gramaticologia'),(145,'Grupocarmologia'),(146,'Harmoniologia'),(147,'Harmonopensenologia'),(148,'Hematologia'),(149,'Hermeneuticologia'),(150,'Heterocriticologia'),(151,'Heteronomologia'),(152,'Heuristicologia'),(153,'Historiografologia'),(154,'Historiologia'),(155,'Holobiografologia'),(156,'Holocarmologia'),(157,'Holocerebrologia'),(158,'Holociclologia'),(159,'Holoculturologia'),(160,'Holofilosofia'),(161,'Holomaturologia'),(162,'Holomemoriologia'),(163,'Holomnemônica'),(164,'Holomnemossomatologia'),(165,'Holopensenologia'),(166,'Holopercucienciologia'),(167,'Holopesquisologia'),(168,'Holossomatologia'),(169,'Holossomática'),(170,'Holotecologia'),(171,'Homeostaticologia'),(172,'Imagisticologia'),(173,'Infocomunicologia'),(174,'Instantaneologia'),(175,'Intencionologia'),(176,'Interassistenciologia'),(177,'Interconfianciologia'),(178,'Interdimensionologia'),(179,'Interdisciplinologia'),(180,'Intermissiologia'),(181,'Intraconscienciologia'),(182,'Intrafisicologia'),(183,'Invexologia'),(184,'Invexometrologia'),(185,'Lateropensenologia'),(186,'Legislogia'),(187,'Leiturologia'),(188,'Liderologia'),(189,'Linguisticologia'),(190,'Lucidologia'),(191,'Manossomatologia'),(192,'Materiologia'),(193,'Maternologia'),(194,'Materpensenologia'),(195,'Maximologia'),(196,'Maximorexologia'),(197,'Maxiproexologia'),(198,'Megaconteudologia'),(199,'Megaenfocologia'),(200,'Megafocologia'),(201,'Megagesconologia'),(202,'Megaparapatologia'),(203,'Megapensenologia'),(204,'Megapriorologia'),(205,'Megassincronologia'),(206,'Megataristicologia'),(207,'Mentalsomatologia'),(208,'Mentirologia'),(209,'Meteorologia'),(210,'Minimorexologia'),(211,'Miniproexologia'),(212,'Minissincronologia'),(213,'Mnemossomatologia'),(214,'Mnemotecnologia'),(215,'Multiculturologia'),(216,'Multidimensionologia'),(217,'Neologia'),(218,'Neologismologia'),(219,'Neonatologia'),(220,'Neopensenologia'),(221,'Neoverponologia'),(222,'Nosopensenologia'),(223,'Ofiexologia'),(224,'Omnileiturologia'),(225,'Opciologia'),(226,'Oximorologia'),(227,'Pacifismologia'),(228,'Para-historiografia'),(229,'Paraassepsiologia'),(230,'Parabstraciologia'),(231,'Paracerebrologia'),(232,'Paracomunicologia'),(233,'Paraconviviologia'),(234,'Paracosmovisiologia'),(235,'Paracronologia'),(236,'Paradigmologia'),(237,'Paradireitologia'),(238,'Paradoxologia'),(239,'Paraetologia'),(240,'Parafenomenologia'),(241,'Parafisiologia'),(242,'Parageneticologia'),(243,'Parageografologia'),(244,'Paranatomia'),(245,'Paraneurologia'),(246,'Parapatologia'),(247,'Parapedagogia'),(248,'Parapercepciologia'),(249,'Parapercucienciologia'),(250,'Parapoliticologia'),(251,'Paraprocedenciologia'),(252,'Paraprofilaxiologia'),(253,'Paraprospectivologia'),(254,'Pararrecinologia'),(255,'Pararrotinologia'),(256,'Parasitologia'),(257,'Parassemiologia'),(258,'Parassepsiologia'),(259,'Parassincronologia'),(260,'Parassociologia'),(261,'Paratecnologia'),(262,'Paraterapeuticologia'),(263,'Paravoluntariologia'),(264,'Paraxiologia'),(265,'Parencriptologia'),(266,'Paresquadriologia'),(267,'Passadologia'),(268,'Patopensenologia'),(269,'Pedagogia'),(270,'Pensenologia'),(271,'Perdologia'),(272,'Perfilologia'),(273,'Pesquisologia'),(274,'Policarmologia'),(275,'Politicologia'),(276,'Precedenciologia'),(277,'Presenciologia'),(278,'Prevenciologia'),(279,'Principiologia'),(280,'Problematicologia'),(281,'Procedimentologia'),(282,'Proexologia'),(283,'Projeciologia'),(284,'Prospectivologia'),(285,'Proxêmica'),(286,'Psicossomatologia'),(287,'Raciocinologia'),(288,'Recexologia'),(289,'Reciclologia'),(290,'Redaciologia'),(291,'Reeducaciologia'),(292,'Refutaciologia'),(293,'Ressomatologia'),(294,'Rotinologia'),(295,'Salvaciologia'),(296,'Semiconsciexologia'),(297,'Serenologia'),(298,'Seriexologia'),(299,'Sexossomatologia'),(300,'Sinergisticologia'),(301,'Sociologia'),(302,'Somatologia'),(303,'Subcogniciologia'),(304,'Subconscienciologia'),(305,'Surpreendenciologia'),(306,'Tangenciologia'),(307,'Taquipensenologia'),(308,'Taristicologia'),(309,'Teaticologia'),(310,'Tecnologia'),(311,'Tematologia'),(312,'Temperamentologia'),(313,'Tenepessologia'),(314,'Terapeuticologia'),(315,'Tertuliologia'),(316,'Traforologia'),(317,'Transverponologia'),(318,'Verbaciologia'),(319,'Verponologia'),(320,'Voliciologia'),(321,'Xenopensenologia'),(322,'Verbetologia'),(323,'Orismologia'),(324,'Antipodismologia'),(325,'Autexperienciologia'),(326,'Ofiexogia'),(327,'Parapesquisologia'),(328,'Paramutaciologia'),(329,'Paradidaticologia'),(330,'Megaeuforizaciologia'),(331,'Megaproblematicologia'),(333,'Autevolociologia'),(334,'Conformaticologia'),(335,'Filiologia'),(336,'Ginossomatologia'),(337,'Matematicologia'),(338,'Algoritmologia'),(339,'Integraciologia'),(340,'Vinculologia'),(341,'Pancogniciologia'),(342,'Governologia'),(343,'Multidimensiologia'),(344,'Vivenciologia'),(345,'Cronologia'),(346,'Autodesempenhologia'),(347,'Equilibriologia'),(348,'Holoparapotenciologia'),(349,'Dramatologia'),(350,'Ortopensenologia'),(351,'Autocoerenciologia'),(352,'Magnoproexologia'),(353,'Voluntariologia'),(354,'Acertologia'),(355,'Autodesassediologia'),(356,'Onirologia'),(357,'Equilibriiologia'),(358,'Holocogniciologia'),(359,'Convivenciologia'),(360,'Megatrafalologia'),(361,'Autotemperamentologia'),(362,'Interdimensiologia'),(363,'Profilaxiologia'),(364,'Cinologia'),(365,'Sociopatologia');
+/*!40000 ALTER TABLE `corpus_especialidade` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2012-01-12 16:23:20

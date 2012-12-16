@@ -1,0 +1,19 @@
+Metadata-Version: 1.1
+Name: django-ibge
+Version: 0.1.2
+Summary: Django IBGE application
+Home-page: https://bitbucket.org/semente/django-ibge
+Author: Guilherme Gondim
+Author-email: semente@taurinus.org
+License: GNU General Public License (GPL), Version 3
+Download-URL: https://bitbucket.org/semente/django-ibge/downloads
+Description: Django application to provide information from Brazilian Institute of Geography and Statistics (IBGE).
+Keywords: django apps ibge
+Platform: UNKNOWN
+Classifier: Environment :: Plugins
+Classifier: Framework :: Django
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: GNU General Public License (GPL)
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Topic :: Software Development :: Libraries :: Python Modules

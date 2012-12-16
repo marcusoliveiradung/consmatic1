@@ -1,0 +1,17 @@
+eclipse.preferences.version=1
+encoding//cons/admin.py=utf8
+encoding//cons/models.py=utf-8
+encoding//corpus/models.py=utf8
+encoding//enciclopedia/models.py=utf8
+encoding//holoteca/admin.py=utf8
+encoding//holoteca/models.py=utf-8
+encoding//ibge/models.py=utf-8
+encoding//ibge/setup.py=utf-8
+encoding//ic_ec/admin.py=utf8
+encoding//ic_ec/models/assocconscic_ec.py=utf-8
+encoding//ic_ec/models/conteudo.py=utf-8
+encoding//ic_ec/models/emp.py=utf-8
+encoding//ic_ec/models/projetoatividade.py=utf-8
+encoding//org/admin.py=utf8
+encoding//org/models.py=utf-8
+encoding//projeto_cineo_acerto/models.py=utf8
