@@ -28,12 +28,29 @@ class TipoAssocConscIc_EcAdmin(admin.ModelAdmin):
     
 class ParticipacaoInline(admin.StackedInline):
     model = Participacao
-    
+    fieldsets = [
+    ('Info Data', {'fields': ['atividade','assocconscic_ec','funcao','obs','ind_pagto','valor_pago','forma_pagto',
+    'ind_presenca','percentual_presenca'],
+    'classes': ['collapse']}),
+    ]
+    #-------------------------------------------------
+    #atividade = models.ForeignKey(Atividade)
+    #assocconscic_ec = models.ForeignKey(AssocConscIc_Ec)
+    #funcao = models.ForeignKey(FuncaoAtividade, blank=True, null=True)
+###   area = models.ForeignKey(Area,blank=True, null=True)
+    #obs = models.TextField(blank=True, null=True)
+    #ind_pagto = models.NullBooleanField(blank=True, null=True)
+    #valor_pago = models.IntegerField(blank=True, null=True)
+    #forma_pagto = models.ForeignKey(FormaPagto,blank=True, null=True)
+    #ind_presenca = models.NullBooleanField(blank=True, null=True)
+    #percentual_presenca = models.SmallIntegerField(blank=True, null=True)
+    #----------------------------------------------------
 class AtividadeInline(admin.TabularInline):
 #     fieldsets = [
 #     (None,{'fields': ['descricao']}),
 #     ]
     model = Atividade
+    
 
 #**********************************
 class AtividadeAdmin(admin.ModelAdmin):

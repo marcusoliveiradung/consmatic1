@@ -59,9 +59,9 @@ class Variavel(models.Model):
     atributo = models.ForeignKey(Config_Atribut_ATTR)
     nome =  models.CharField(max_length=50)
     descricao = models.TextField()
-    sequencia = models.IntegerField()
-    item_fixo = models.IntegerField()
-    item_basico = models.IntegerField()
+#    sequencia = models.IntegerField()
+#    item_fixo = models.IntegerField()
+#    item_basico = models.IntegerField()
     #maximo = models.IntegerField( blank= 'True', null='True')
     
     def __unicode__(self):
@@ -75,7 +75,7 @@ class Termo_ou_Fraseologismo(models.Model):
 #    #campos temporarios
      nome = models.CharField(max_length=150) 
      especialidade = models.ForeignKey(Especialidade,related_name= 'especialidade_acerto', blank= 'True', null='True')
-     idioma = models.ForeignKey(Idioma,related_name= 'idioma_acerto', blank= 'True', null='True')
+     idioma_orig = models.ForeignKey(Idioma,related_name= 'idioma_acerto', blank= 'True', null='True')
      #tema = models.ForeignKey(Tema,related_name= 'conscin_acervo', blank= 'True', null='True')
      autor =  models.ForeignKey(Autor,related_name= 'autor_acerto', blank= 'True', null='True')
      num_apresentacao = models.IntegerField() 
@@ -124,7 +124,7 @@ class Entrada(models.Model):
 #    data_criacao = models.DateTimeField('Data Inicial do Verbete:')
 #    autor = models.CharField(max_length=400) 
      def __unicode__(self):
-         return self.termo.nome # + ' / ' + self.variavel.nome + ' / '  + self.idioma.nome + ' / '  + self.conteudo.nome
+         return self.termo.nome  + ' / ' + self.variavel.nome + ' / '  + self.idioma.nome + ' / '  + self.conteudo.nome
 
 
 

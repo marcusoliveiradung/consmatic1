@@ -60,14 +60,26 @@ class Artefato(models.Model):
  #   teca_principal = models.ForeignKey(Teca, blank= 'True', null='True')
  # Uma outra relação poderia ser o autorelacionamento NXN diretos entre os artefatos, independente
  # mente de de tipologia qqer ou da própria teca de insercao 
-    artefato_tec = models.ManyToManyField(Teca,related_name="art_teca", through='Artefato_Teca',blank= 'True', null='True')
-    #teca =  models.ForeignKey(Teca)#, through="Artefato_Teca") 
-    artefato_remissologia = models.ManyToManyField('self',db_table='holoteca_artefato_remissiologia',symmetrical='False',blank= 'True', null='True')#related_name = 'artefato_artefato+',blank= 'True', null='True')
+    artefato_tec = models.ManyToManyField(Teca,related_name="art_teca",symmetrical='False', through='Artefato_Teca',blank= 'True', null='True')
+    #artefato_auto= models.ManyToManyField('self',through='Artefato_Remissiologia',symmetrical='False',blank= 'True', null='True')#related_name = 'artefato_artefato+',blank= 'True', null='True')
     #through= 'Artefato_Remissiologia'
+    #teca =  models.ForeignKey(Teca)#, through="Artefato_Teca") 
     nome = models.CharField(max_length=200)
+    
     def __unicode__(self):
         return self.nome
+#-------------
+class  Artefato_Remissiologia(models.Model):
+    from_artefato = models.ForeignKey(Artefato, related_name = "from_artefato_self",blank= 'True', null='True')
+    to_artefato = models.ForeignKey(Artefato,related_name="to_artefato_self", blank= 'True', null='True')
+    pags = models.CharField(max_length=200) 
+    obs = models.TextField( blank= 'True', null='True')
     
+    def __unicode__(self):
+        return self.artefato.nome + ' / '+  self.teca.nome
+            
+
+#------------
 class  Artefato_Teca(models.Model):
     artefato = models.ForeignKey(Artefato, blank= 'True', null='True')
     teca = models.ForeignKey(Teca, blank= 'True', null='True')
@@ -75,7 +87,7 @@ class  Artefato_Teca(models.Model):
     obs = models.TextField( blank= 'True', null='True')
     
     def __unicode__(self):
-        return self.artefato.nome +   self.teca.nome
+        return self.artefato.nome + ' / '+  self.teca.nome
             
 #-- ----------------------------------------------------
 
@@ -101,7 +113,7 @@ class Config_Teca(models.Model):
     teca_b= models.ForeignKey(Teca, related_name = 'teca_sup_b',blank= 'True', null='True')
     comentario = models.TextField(blank=True, null=True)
     def __unicode__(self):
-        return self.teca_a.nome + '   ' + self.teca_b.nome
+        return self.teca_a.nome + ' /  ' + self.teca_b.nome
 #O ideal aqui seria implementar uma classe associativa NxM de autorelacionamento 
 #entre as TECAS                         
                                                     
@@ -118,7 +130,7 @@ class Tipo_Atributo(models.Model):
     nome = models.CharField(max_length=200,blank= 'True', null='True')
     desc = models.TextField(blank= 'True', null='True')
     def __unicode__(self):
-        return self.teca.nome + ' ' + self.nome 
+        return self.teca.nome + ' / ' + self.nome 
 
 
 #-- -----------------------------------------------------
@@ -132,7 +144,7 @@ class  Config_Atribut_ATTR(models.Model):
     nome = models.CharField(max_length=200,blank= 'True', null='True')
     desc = models.TextField(blank= 'True', null='True')
     def __unicode__(self):
-        return self.teca.nome + ' '  + '     ' + self.nome #+ self.tipo_atributo.nome
+        return self.teca.nome + ' / '   + self.nome #+ self.tipo_atributo.nome
         
 
 #--------------------------------------
@@ -177,7 +189,7 @@ class Artefato_has_Ocurrences(models.Model):
     local_virtual = models.FileField(upload_to = 'conteudo') 
     
     def __unicode__(self):
-        return self.artefato.nome + '     ' + self.local_fisica + self.local_virtual
+        return self.artefato.nome + '  /   ' + self.local_fisica + ' / ' + self.local_virtual
     
     
 

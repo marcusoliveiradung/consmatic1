@@ -1,4 +1,5 @@
 #-*- coding: utf-8 -*-
+
 from django.db import models
 #from holociclo.models.Dominios import Especialidade
 from cons.models import *
@@ -61,22 +62,33 @@ class Artefato(models.Model):
  # mente de de tipologia qqer ou da própria teca de insercao 
     artefato_tec = models.ManyToManyField(Teca,related_name="art_teca", through='Artefato_Teca',blank= 'True', null='True')
     #teca =  models.ForeignKey(Teca)#, through="Artefato_Teca") 
-    artefato_remissologia = models.ManyToManyField('self',db_table='holoteca_artefato_remissiologia',symmetrical='False',blank= 'True', null='True')#related_name = 'artefato_artefato+',blank= 'True', null='True')
-    #through= 'Artefato_Remissiologia'
     nome = models.CharField(max_length=200)
-    
+    artefato_remissiologia = models.ManyToManyField('self',related_name="art_self", through='Artefato_Remissiologia',db_table='holoteca_artefato_remissiologia',symmetrical='False',blank= 'True', null='True')#related_name = 'artefato_artefato+',blank= 'True', null='True')
+    #through= 'Artefato_Remissiologia'
     def __unicode__(self):
         return self.nome
+#-------------
+    class  Artefato_Remissiologia(models.Model):
+    from_artefato = models.ForeignKey(Artefato, blank= 'True', null='True')
+    to_artefato = models.ForeignKey(Artefato,related_name="artefato_self" blank= 'True', null='True')
+    pags = models.CharField(max_length=200) 
+    obs = models.TextField( blank= 'True', null='True')
     
+    def __unicode__(self):
+        return self.artefato.nome + ' / '+  self.teca.nome
+            
+
+#------------
 class  Artefato_Teca(models.Model):
     artefato = models.ForeignKey(Artefato, blank= 'True', null='True')
     teca = models.ForeignKey(Teca, blank= 'True', null='True')
     ind_insercao_primaria = models.NullBooleanField(blank= 'True', null='True')
     obs = models.TextField( blank= 'True', null='True')
+    
     def __unicode__(self):
-        return self.artefato.nome + '   ' + self.teca.nome
+        return self.artefato.nome + ' / '+  self.teca.nome
             
-#-- -----------------------------------------------------
+#-- ----------------------------------------------------
 
 #-------------------------------
 #-- Classe Assoc_Conscin
@@ -100,7 +112,7 @@ class Config_Teca(models.Model):
     teca_b= models.ForeignKey(Teca, related_name = 'teca_sup_b',blank= 'True', null='True')
     comentario = models.TextField(blank=True, null=True)
     def __unicode__(self):
-        return self.teca_a.nome + '   ' + self.teca_b.nome
+        return self.teca_a.nome + ' /  ' + self.teca_b.nome
 #O ideal aqui seria implementar uma classe associativa NxM de autorelacionamento 
 #entre as TECAS                         
                                                     
@@ -117,7 +129,7 @@ class Tipo_Atributo(models.Model):
     nome = models.CharField(max_length=200,blank= 'True', null='True')
     desc = models.TextField(blank= 'True', null='True')
     def __unicode__(self):
-        return self.teca.nome + ' ' + self.nome 
+        return self.teca.nome + ' / ' + self.nome 
 
 
 #-- -----------------------------------------------------
@@ -131,7 +143,7 @@ class  Config_Atribut_ATTR(models.Model):
     nome = models.CharField(max_length=200,blank= 'True', null='True')
     desc = models.TextField(blank= 'True', null='True')
     def __unicode__(self):
-        return self.teca.nome + ' '  + '     ' + self.nome #+ self.tipo_atributo.nome
+        return self.teca.nome + ' / '   + self.nome #+ self.tipo_atributo.nome
         
 
 #--------------------------------------
@@ -156,7 +168,7 @@ class Fichamento_Artefato(models.Model):
     dominiologia_atribut =  models.ForeignKey(Dominiologia_Atribut,blank= 'True', null='True')
     conteudo =   models.CharField(max_length=200)
     def __unicode__(self):
-        return self.artefato.nome + self.config_atribut_attr.nome #+ self.dominiologia_atribut.valor 
+        return self.artefato.nome + '  /  ' + self.config_atribut_attr.nome + '   /  ' # + self.dominiologia_atribut.valor 
 #-- -----------------------------------------------------
 #Tabela autoassociativa entre artefatos com declaração explícita
 #class  Artefato_Remissiologia(models.Model):
@@ -176,19 +188,10 @@ class Artefato_has_Ocurrences(models.Model):
     local_virtual = models.FileField(upload_to = 'conteudo') 
     
     def __unicode__(self):
-        return self.artefato.nome + '     ' + self.local_fisica + self.local_virtual
+        return self.artefato.nome + '  /   ' + self.local_fisica + ' / ' + self.local_virtual
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
     
 #**************************************    
 #  PRIMARY KEY (`Artefato_id_artefato`, `Localização(LOGICAL)_idLocalização(LOGICAL)`) ,
