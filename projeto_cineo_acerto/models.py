@@ -29,14 +29,14 @@ from holoteca.models import Config_Atribut_ATTR, Dominiologia_Atribut
 #----------------------------
 #-- Classe Autor Terminologico ou Fraseologistico
 #-- -------------------------
-class Autor(models.Model):
-    #nome = models.CharField(max_length=400) 
-    conscin =  models.ForeignKey(Consc, related_name= 'conscin_acerto', blank= 'True', null='True')
-    iniciais = models.CharField(max_length=200)
-    ano_nascimento = models.CharField(max_length=4)
-    curriculum = models.TextField()
-    def __unicode__(self):
-        return self.conscin.nome
+#class Autor(models.Model):
+#    #nome = models.CharField(max_length=400) 
+#    conscin =  models.ForeignKey(Consc, related_name= 'conscin_acerto', blank= 'True', null='True')
+#    iniciais = models.CharField(max_length=200)
+#    ano_nascimento = models.CharField(max_length=4)
+#    curriculum = models.TextField()
+#    def __unicode__(self):
+ #       return self.conscin.nome
 
 
 ###----------------------------
@@ -56,29 +56,27 @@ class Idioma(models.Model):
 #-- -----------------------------------------------------
 class Variavel(models.Model):
     #idioma =  models.ForeignKey(Idioma,related_name= 'idioma_acervo', blank= 'True', null='True')
-    atributo = models.ForeignKey(Config_Atribut_ATTR)
+    atributo = models.ForeignKey(Config_Atribut_ATTR, blank= 'True', null='True')
     nome =  models.CharField(max_length=50)
-    descricao = models.TextField()
+    codigo = models.CharField(max_length=06, blank= 'True', null='True')
+    descricao = models.TextField(blank= 'True', null='True')
 #    sequencia = models.IntegerField()
 #    item_fixo = models.IntegerField()
 #    item_basico = models.IntegerField()
     #maximo = models.IntegerField( blank= 'True', null='True')
     
     def __unicode__(self):
-        return self.nome
-
-
-##----------------------------------------------
+        return    self.nome #+ ' / ' + self.atributo.nome ##----------------------------------------------
 
 # CLASS TERMO
 class Termo_ou_Fraseologismo(models.Model):
 #    #campos temporarios
      nome = models.CharField(max_length=150) 
-     especialidade = models.ForeignKey(Especialidade,related_name= 'especialidade_acerto', blank= 'True', null='True')
+     especialidade_central = models.ForeignKey(Especialidade,related_name= 'especialidade_acerto', blank= 'True', null='True')
      idioma_orig = models.ForeignKey(Idioma,related_name= 'idioma_acerto', blank= 'True', null='True')
      #tema = models.ForeignKey(Tema,related_name= 'conscin_acervo', blank= 'True', null='True')
-     autor =  models.ForeignKey(Autor,related_name= 'autor_acerto', blank= 'True', null='True')
-     num_apresentacao = models.IntegerField() 
+     #autor =  models.ForeignKey(Autor,related_name= 'autor_acerto', blank= 'True', null='True')
+#     num_apresentacao = models.IntegerField() 
      data_criacao = models.DateField()     
      #paginas = models.IntegerField()
      #remissiologia_id = models.IntegerField()
@@ -87,7 +85,7 @@ class Termo_ou_Fraseologismo(models.Model):
 #    autor = models.CharField(max_length=400) 
      
      def __unicode__(self):
-        return self.nome #+  ' / ' + self.especialidade.nome + ' / '  + self.idioma.nome + ' / '  + self.autor.autor.conscin.nome 
+        return self.nome +  ' / ' + self.especialidade_central.nome + ' / '  + self.idioma_orig.nome + ' / ' # + self.autor.conscin.nome 
 
 #     def was_published_today(self):
 #        return self.data_criacao.date() == datetime.date.today()
@@ -104,7 +102,8 @@ class Termo_ou_Fraseologismo(models.Model):
 class Conteudo(models.Model):
      nome = models.CharField(max_length=500) 
      def __unicode__(self):
-        return self.nome
+        return self.nome  
+
 
 
 #-- -----------------------------------------------------

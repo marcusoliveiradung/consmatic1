@@ -87,7 +87,7 @@ admin.site.register(Artefato, ArtefatoAdmin)#, Artefato_Teca_Admin)
 admin.site.register(Fichamento_Artefato)
 admin.site.register(Assoc_Consc_Artefato)
 admin.site.register(Config_Teca)
-admin.site.register(Artefato_Remissiologia)
+admin.site.register(Artefato_Remissiologia)    
 admin.site.register(Config_Atribut_ATTR, Config_Atribut_ATTR_Admin)
 
 

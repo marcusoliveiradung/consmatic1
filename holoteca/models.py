@@ -142,6 +142,7 @@ class  Config_Atribut_ATTR(models.Model):
     teca = models.ForeignKey(Teca,blank= 'True', null='True') 
     tipo_atributo = models.ForeignKey(Tipo_Atributo,blank= 'True', null='True')
     nome = models.CharField(max_length=200,blank= 'True', null='True')
+    codigo =  models.CharField(max_length=006,blank= 'True', null='True')
     desc = models.TextField(blank= 'True', null='True')
     def __unicode__(self):
         return self.teca.nome + ' / '   + self.nome #+ self.tipo_atributo.nome
@@ -149,12 +150,17 @@ class  Config_Atribut_ATTR(models.Model):
 
 #--------------------------------------
 #-- Classe Dominiologia Atributológica
-#-- -----------------------------------------------------    
+#-- ----------------------------------------------------- 
+#OBS. Essa Classe pode ser um autorelacionamento ( classe autassociativa) do/com a própria Atributologia, possivelmente#
+   
 class Dominiologia_Atribut(models.Model):
 #  `idDominiologia Atributológica` INT NOT NULL ,
 #  `Tipologia(Logical)_id_tipologia` INT NOT NULL ,
     atributo_dominio = models.ForeignKey(Config_Atribut_ATTR, blank= 'True', null='True')
-    valor = models.CharField(max_length=50)
+    nome = models.CharField(max_length=200,blank= 'True', null='True')
+    codigo = models.CharField(max_length=006,blank= 'True', null='True')
+    desc = models.TextField(blank= 'True', null='True')
+    valor = models.CharField(max_length=50,blank= 'True', null='True')
     def __unicode__(self):
         return  self.valor   # self.atributo_dominio.nome + '' +
 
