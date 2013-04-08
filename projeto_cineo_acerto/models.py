@@ -75,7 +75,7 @@ class Termo_ou_Fraseologismo(models.Model):
      especialidade_central = models.ForeignKey(Especialidade,related_name= 'especialidade_acerto', blank= 'True', null='True')
      idioma_orig = models.ForeignKey(Idioma,related_name= 'idioma_acerto', blank= 'True', null='True')
      #tema = models.ForeignKey(Tema,related_name= 'conscin_acervo', blank= 'True', null='True')
-     autor =  models.ForeignKey(Autor,related_name= 'autor_acerto', blank= 'True', null='True')
+     #autor =  models.ForeignKey(Autor,related_name= 'autor_acerto', blank= 'True', null='True')
 #     num_apresentacao = models.IntegerField() 
      data_criacao = models.DateField()     
      #paginas = models.IntegerField()
@@ -123,7 +123,7 @@ class Entrada(models.Model):
 #    data_criacao = models.DateTimeField('Data Inicial do Verbete:')
 #    autor = models.CharField(max_length=400) 
      def __unicode__(self):
-         return self.termo.nome  + ' / ' + self.variavel.nome + ' / '  + self.idioma.nome + ' / '  + self.conteudo.nome
+         return self.termo.nome  + ' / ' + self.variavel.nome + ' / '  +  self.conteudo.nome # + ' / ' + self.idioma.nome 
 
 
 
