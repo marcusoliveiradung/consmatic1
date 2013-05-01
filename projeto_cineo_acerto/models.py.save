@@ -97,7 +97,7 @@ class Termo_ou_Fraseologismo(models.Model):
 #        model = Termo_ou_Fraseologismo
 
 #-- -----------------------------------------------------
-#-- Table entrada no ACERVO - Fichamento Terminologico
+#-- Table entrada no ACERVO - Ficamento Terminologico
 #------------------------------------
 class Conteudo(models.Model):
      nome = models.CharField(max_length=500) 
@@ -123,7 +123,7 @@ class Entrada(models.Model):
 #    data_criacao = models.DateTimeField('Data Inicial do Verbete:')
 #    autor = models.CharField(max_length=400) 
      def __unicode__(self):
-         return self.termo.nome  + ' / ' + self.variavel.nome + ' / '  +  self.conteudo.nome # + ' / ' + self.idioma.nome 
+         return self.termo.nome  + ' / ' + self.variavel.nome + ' / '  + self.idioma.nome + ' / '  + self.conteudo.nome
 
 
 
