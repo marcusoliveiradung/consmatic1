@@ -11,7 +11,7 @@ import datetime
 #Importação de referência de Classes externas ( de outras áreas)
 from cons.models  import Consc 
 from corpus.models import Especialidade,Tema
-from holoteca.models import Config_Atribut_ATTR, Dominiologia_Atribut
+from holoteca.models import Dominiologia_Atribut, Config_Atribut_ATTR
 
 #----- Evolution for enc
 #from django_evolution.mutations import *
@@ -123,7 +123,7 @@ class Entrada(models.Model):
 #    data_criacao = models.DateTimeField('Data Inicial do Verbete:')
 #    autor = models.CharField(max_length=400) 
      def __unicode__(self):
-         return self.termo.nome  + ' / ' + self.variavel.nome + ' / '  +  self.conteudo.nome # + ' / ' + self.idioma.nome 
+         return self.termo.nome  + ' / ' + self.variavel.nome + ' / '  +  self.conteudo 
 
 
 
