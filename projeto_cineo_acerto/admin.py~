@@ -7,7 +7,7 @@ from projeto_cineo_acerto.models import  Idioma, Variavel, Termo_ou_Fraseologism
 class EntradaInline(admin.StackedInline):
      model =  Entrada
      fieldsets = [
-     ('Info Data', {'fields': ['termo','variavel', 'self.variavel.atributo','conteudo'],
+     ('Info Data', {'fields': ['termo','variavel', 'conteudo'],#'self.variavel.atributo',
      'classes': ['collapse']}),
      ]   
 #**************************
