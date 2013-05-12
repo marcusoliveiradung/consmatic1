@@ -60,10 +60,12 @@ class Variavel(models.Model):
     nome =  models.CharField(max_length=50)
     codigo = models.CharField(max_length=06, blank= 'True', null='True')
     descricao = models.TextField(blank= 'True', null='True')
-#    sequencia = models.IntegerField()
-#    item_fixo = models.IntegerField()
-#    item_basico = models.IntegerField()
-    #maximo = models.IntegerField( blank= 'True', null='True')
+    sequencia = models.IntegerField()
+    prioridade = models.IntegerField() # Nível de Preenchimento - 1- MIN; 2- BAS; 3 - EXA
+    #    item_fixo = models.IntegerField()
+    #    item_basico = models.IntegerField()
+    #    maximo = models.IntegerField( blank= 'True', null='True')
+    #    variavel_sup = 
     
     def __unicode__(self):
         return    self.nome #+ ' / ' + self.atributo.nome ##----------------------------------------------
@@ -77,7 +79,7 @@ class Termo_ou_Fraseologismo(models.Model):
      #tema = models.ForeignKey(Tema,related_name= 'conscin_acervo', blank= 'True', null='True')
      #autor =  models.ForeignKey(Autor,related_name= 'autor_acerto', blank= 'True', null='True')
 #     num_apresentacao = models.IntegerField() 
-     data_criacao = models.DateField()     
+     data_criacao = models.DateField(blank= 'True', null='True')     
      #paginas = models.IntegerField()
      #remissiologia_id = models.IntegerField()
      #remissiologia_id1= models.IntegerField()  
