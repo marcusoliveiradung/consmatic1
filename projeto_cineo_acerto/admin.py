@@ -6,10 +6,12 @@ from projeto_cineo_acerto.models import  Idioma, Variavel, Termo_ou_Fraseologism
 #*****************
 class EntradaInline(admin.StackedInline):
      model =  Entrada
+     
      fieldsets = [
      ('Info Data', {'fields': ['termo','variavel', 'conteudo'],#'self.variavel.atributo',
      'classes': ['collapse']}),
-     ]   
+     ]
+        
 #**************************
 #class DominioInline(admin.StackedInline):
 #      model =  Dominiologia_Atribut
@@ -17,10 +19,18 @@ class EntradaInline(admin.StackedInline):
 #      ('Info Data', {'fields': ['variavel.','conteudo'],
 #      'classes': ['collapse']}),
 #      ]   
-    
+#********************
+class VariavelAdmin(admin.ModelAdmin):
+     model =  Variavel
+     list_filter = ['prioridade'] 
+     #inlines = [DominioInline]
+     extra = 100
+       
 #********************
 class Termo_ou_FraseologismoAdmin(admin.ModelAdmin):
      model =  Termo_ou_Fraseologismo #, Config_Atribut_ATTR]
+     search_fields = ['nome']
+     list_filter = ['idioma_orig','especialidade_central'] 
      inlines = [EntradaInline]
      #inlines = [DominioInline]
      extra = 3
@@ -32,7 +42,7 @@ class Termo_ou_FraseologismoAdmin(admin.ModelAdmin):
  #    extra = 3
    
 #******************************************
-admin.site.register(Variavel)
+admin.site.register(Variavel, VariavelAdmin)
 #admin.site.register(Autor)
 admin.site.register(Idioma)
 admin.site.register(Termo_ou_Fraseologismo,Termo_ou_FraseologismoAdmin)
