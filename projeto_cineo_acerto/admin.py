@@ -9,7 +9,8 @@ class EntradaInline(admin.StackedInline):
      
      fieldsets = [
      ('Info Data', {'fields': ['termo','variavel', 'conteudo'],#'self.variavel.atributo',
-     'classes': ['collapse']}),
+     #'classes': ['collapse']# 
+     }),
      ]
         
 #**************************
