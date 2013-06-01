@@ -60,15 +60,20 @@ class Variavel(models.Model):
     nome =  models.CharField(max_length=50)
     codigo = models.CharField(max_length=06, blank= 'True', null='True')
     descricao = models.TextField(blank= 'True', null='True')
-    sequencia = models.IntegerField()
-    prioridade = models.IntegerFiled() #Nível de Preenchimento - 1- MIN; 2- BAS; 3 - EXA
+    sequencia = models.CharField(max_length=02)
+    prioridade = models.CharField(max_length=02) # Nível de Preenchimento - 1- MIN; 2- BAS; 3 - EXA
     #    item_fixo = models.IntegerField()
     #    item_basico = models.IntegerField()
     #    maximo = models.IntegerField( blank= 'True', null='True')
     #    variavel_sup = 
     
     def __unicode__(self):
-        return    self.nome #+ ' / ' + self.atributo.nome ##----------------------------------------------
+        return    self.nome  + ' / '+ self.sequencia + ' / ' + self.prioridade  #----------------------------------------------
+     
+    class Meta:
+         ordering = ["sequencia"]
+         verbose_name_plural = "variaveis" 
+
 
 # CLASS TERMO
 class Termo_ou_Fraseologismo(models.Model):
