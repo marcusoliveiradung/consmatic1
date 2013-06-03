@@ -68,7 +68,7 @@ class Variavel(models.Model):
     #    variavel_sup = 
     
     def __unicode__(self):
-        return    self.nome  + ' / '+ self.sequencia + ' / ' + self.prioridade  #----------------------------------------------
+        return    self.nome # + ' / '+ self.sequencia + ' / ' + self.prioridade  #----------------------------------------------
      
     class Meta:
          ordering = ["sequencia"]
@@ -132,7 +132,9 @@ class Entrada(models.Model):
      def __unicode__(self):
          return self.termo.nome  + ' / ' + self.variavel.nome + ' / '  +  self.conteudo 
 
-
+     class Meta:
+         ordering = ["sequencia"]
+         verbose_name_plural = "Entradas" 
 
 
 
