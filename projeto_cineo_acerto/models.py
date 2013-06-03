@@ -92,7 +92,7 @@ class Termo_ou_Fraseologismo(models.Model):
 #    autor = models.CharField(max_length=400) 
      
      def __unicode__(self):
-        return self.nome +  ' / ' + self.especialidade_central.nome + ' / '  + self.idioma_orig.nome + ' / ' # + self.autor.conscin.nome 
+        return self.nome #+  ' / ' + self.especialidade_central.nome + ' / '  + self.idioma_orig.nome + ' / ' # + self.autor.conscin.nome 
 
 #     def was_published_today(self):
 #        return self.data_criacao.date() == datetime.date.today()
