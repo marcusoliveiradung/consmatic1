@@ -5,12 +5,12 @@ from projeto_cineo_acerto.models import  Idioma, Variavel, Termo_ou_Fraseologism
 #****************
 #*****************
 class EntradaInline(admin.StackedInline):
-     model =  Entrada
-     
+     model =  Entrada     
      fieldsets = [
-     ('Info Data', {'fields': ['termo','variavel', 'conteudo'],#'self.variavel.atributo',
-     'classes': ['collapse']}),
-     ]
+     ('Info Data', {'fields': ['termo','variavel', 'conteudo', ],#'self.variavel.atributo',
+     #'classes': ['collapse']# 
+     }),
+          ]
         
 #**************************
 #class DominioInline(admin.StackedInline):
@@ -20,11 +20,20 @@ class EntradaInline(admin.StackedInline):
 #      'classes': ['collapse']}),
 #      ]   
 #********************
+class VariavelInline(admin.StackedInline):
+     model =  Variavel     
+     ordering = ['sequencia']
+     #fieldsets = [
+     #('Info Data', {'fields': ['termo','variavel', 'conteudo', ],#'self.variavel.atributo',
+     #'classes': ['collapse']# 
+     #}),
+     #     ]
+#*********************
 class VariavelAdmin(admin.ModelAdmin):
      model =  Variavel
+     ordering = ['sequencia']
      list_filter = ['prioridade'] 
-     #inlines = [DominioInline]
-     extra = 100
+     
        
 #********************
 class Termo_ou_FraseologismoAdmin(admin.ModelAdmin):
@@ -32,7 +41,7 @@ class Termo_ou_FraseologismoAdmin(admin.ModelAdmin):
      search_fields = ['nome']
      list_filter = ['idioma_orig','especialidade_central'] 
      inlines = [EntradaInline]
-     #inlines = [DominioInline]
+     ordering = ['variavel.sequencia']
      extra = 3
 
  #********************
