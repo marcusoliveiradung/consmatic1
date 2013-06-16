@@ -95,8 +95,8 @@ class Termo_ou_Fraseologismo(models.Model):
         return self.nome #+  ' / ' + self.especialidade_central.nome + ' / '  + self.idioma_orig.nome + ' / ' # + self.autor.conscin.nome 
 
       class Meta:
-         ordering = ["nome"]
-         verbose_name_plural = "Termos ou Fraseologismos"
+           ordering = ["nome"]
+           verbose_name_plural = "Termos ou Fraseologismos"
 
 #     def was_published_today(self):
 #        return self.data_criacao.date() == datetime.date.today()
