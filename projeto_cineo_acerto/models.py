@@ -1,7 +1,7 @@
 # _*_ coding: utf8 _*_
 
 #dir
-from django.db import models
+from django.db import model
 from django.forms import ModelForm
 from django.core.files import File
 #
