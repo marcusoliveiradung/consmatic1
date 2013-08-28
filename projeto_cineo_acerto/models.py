@@ -138,7 +138,7 @@ class Entrada(models.Model):
 
      class Meta:
          #ordering = ["sequencia"]
-         verbose_name_plural = "Entradas" 
+         verbose_name_plural = "FICHA do TERMO ou FRASEOLOGISMO CONSCIENCIOLÓGICO:" 
 
 
 
