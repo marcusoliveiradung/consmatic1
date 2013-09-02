@@ -79,13 +79,16 @@ class Variavel(models.Model):
 class Termo_ou_Fraseologismo(models.Model):
 #    #campos temporarios
      nome = models.CharField(max_length=150) 
+     data_criacao = models.DateField(blank= 'True', null='True')
      especialidade_central = models.ForeignKey(Especialidade,related_name= 'especialidade_acerto', blank= 'True', null='True')
      idioma_orig = models.ForeignKey(Idioma,related_name= 'idioma_acerto', blank= 'True', null='True')
+#    remissiologia = models.ManyToManyField(`self`,related_name= 'remissao', blank= 'True', null='True')
+#    traduciologia = models.ManyToManyField(`self`,related_name= 'traducao', blank= 'True', null='True')
+
      #tema = models.ForeignKey(Tema,related_name= 'conscin_acervo', blank= 'True', null='True')
      #autor =  models.ForeignKey(Autor,related_name= 'autor_acerto', blank= 'True', null='True')
 #     num_apresentacao = models.IntegerField() 
-     data_criacao = models.DateField(blank= 'True', null='True')     
-     #paginas = models.IntegerField()
+          #paginas = models.IntegerField()
      #remissiologia_id = models.IntegerField()
      #remissiologia_id1= models.IntegerField()  
 #    data_criacao = models.DateTimeField('Data Inicial do Verbete:')
