@@ -43,6 +43,9 @@ class Especialidade(models.Model):
     def __unicode__(self):
         return self.nome
     
+    class Meta:
+        ordering = ["nome"]
+        verbose_name_plural = "Especialidades" 
 # Listas e Tabelas
 
 class Faixas_Etaria(models.Model):
