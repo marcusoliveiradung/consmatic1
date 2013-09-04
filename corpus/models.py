@@ -35,8 +35,9 @@ class Escala_Evolutiva(models.Model):
 #das Especialidades:
 class Especialidade(models.Model):
     nome  = models.CharField(max_length=200) 
-    descricao = models.CharField(max_length=300)  
-    ordem_logica = models.IntegerField()
+    descricao = models.CharField(max_length=300,blank= 'True', null='True')  
+    ordem_logica = models.IntegerField(blank= 'True', null='True)
+    ind_subespec = models.BooleanField(blank= 'True', null='True)
     espec_sup = models.ForeignKey("self",blank= 'True', null='True')
     #espec_assoc = models.ManyToManyField("self",blank= 'True', null='True') 
     def __unicode__(self):
