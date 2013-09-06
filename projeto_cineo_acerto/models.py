@@ -83,7 +83,7 @@ class Termo_ou_Fraseologismo(models.Model):
      especialidade_central = models.ForeignKey(Especialidade,related_name= 'especialidade_acerto', blank= 'True', null='True')
      idioma_orig = models.ForeignKey(Idioma,related_name= 'idioma_acerto', blank= 'True', null='True')
      traduciologia = models.ManyToManyField("self", blank= 'True', null='True') #,related_name= 'traducao'
-     #remissiologia = models.ManyToManyField("self", blank= 'True', null='True') #,related_name= 'remissao'
+     remissiologia = models.ManyToManyField("self", blank= 'True', null='True') #,related_name= 'remissao'
      
 
      #tema = models.ForeignKey(Tema,related_name= 'conscin_acervo', blank= 'True', null='True')
