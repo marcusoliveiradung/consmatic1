@@ -8,7 +8,7 @@ class EspecialidadeAdmin(admin.ModelAdmin)
      #inlines = [EspecialidadeInline]
      extra = 3
      search_fields = ['nome']
-     list_filter = ['espec_sup'] 
+     list_filter = ['ordem_logica','ind_subespec', 'espec_sup'] 
 #********************************
 admin.site.register(Especialidade)
 admin.site.register(Escala_Evolutiva)
