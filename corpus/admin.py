@@ -3,7 +3,7 @@ from django.contrib import admin
 # from corpus - app
 from corpus.models import  Especialidade, Tema, Escala_Evolutiva, Faixas_Etaria, Procedex, Hominologia
 #****************
-class EspecialidadeAdmin(admin.ModelAdmin)
+class EspecialidadeAdmin(admin.ModelAdmin):
      model = Especialidade
      #inlines = [EspecialidadeInline]
      extra = 3
