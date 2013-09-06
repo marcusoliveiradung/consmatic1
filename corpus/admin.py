@@ -3,10 +3,14 @@ from django.contrib import admin
 # from corpus - app
 from corpus.models import  Especialidade, Tema, Escala_Evolutiva, Faixas_Etaria, Procedex, Hominologia
 #****************
-
+class EspecialidadeAdmin(admin.ModelAdmin)
+     model = Especialidade
+     #inlines = [EspecialidadeInline]
+     extra = 3
+     search_fields = ['nome']
+     list_filter = ['espec_sup'] 
 #********************************
 admin.site.register(Especialidade)
-
 admin.site.register(Escala_Evolutiva)
 admin.site.register(Faixas_Etaria)
 admin.site.register(Procedex)
