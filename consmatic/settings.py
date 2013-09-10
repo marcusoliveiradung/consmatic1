@@ -1,4 +1,5 @@
 # Django settings for cons project.
+PROJECT_ROOT = os.path.normpath(os.path.dirname(file))
 
 DEBUG = True
 
@@ -111,8 +112,11 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    #'/home/marcus/Documentos/workspace-sts-2.9.1.RELEASE/consmatic/templates/',
-    './home/recons/webapps/intranet/consmatic/')
+    #'/home/marcus/Documentos/workspace-sts-2.9.1.RELEASE/consmatic/templates/,
+    #'./home/recons/webapps/intranet/consmatic/')
+    os.path.join(PROJECT_ROOT, "../consmatic/templates"),
+)
+    
 
 
 INSTALLED_APPS = (
