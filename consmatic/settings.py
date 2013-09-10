@@ -22,8 +22,8 @@ DATABASES = {
         'default': {
 #       'ENGINE': 'django.db.backends.postgresql_psycopg2', 
 	'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'recon',                   # Or path to database file if using sqlite3.
-        'USER': 'recon',                      # Not used with sqlite3.
+        'NAME': 'recons',                   # Or path to database file if using sqlite3.
+        'USER': 'recons',                      # Not used with sqlite3.
         'PASSWORD': 'b1229dfa',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
         'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
@@ -112,8 +112,7 @@ TEMPLATE_DIRS = (
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
     #'/home/marcus/Documentos/workspace-sts-2.9.1.RELEASE/consmatic/templates/',
-    '/home/recons/webapps/intranet/consmatic/templates/admin',
-  )
+    os.path.join(os.path.dirname(__file__),'../recons/webapps/intranet/consmatic/templates/admin')
 
 
 INSTALLED_APPS = (
