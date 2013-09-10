@@ -1,4 +1,5 @@
 # Django settings for cons project.
+import os
 PROJECT_ROOT = os.path.normpath(os.path.dirname(file))
 
 DEBUG = True
