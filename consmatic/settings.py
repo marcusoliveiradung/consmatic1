@@ -115,7 +115,7 @@ TEMPLATE_DIRS = (
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
     #'/home/marcus/Documentos/workspace-sts-2.9.1.RELEASE/consmatic/templates/,
-    '/home/recons/webapps/intranet/consmatic/templates/admin',)
+    '/home/recons/webapps/intranet/consmatic/templates/admin',
     #os.path.join(PROJECT_ROOT, "../consmatic/templates"),
   )
     
