@@ -100,7 +100,7 @@ class Termo_ou_Fraseologismo(models.Model):
 
      class Meta:
          ordering = ["nome"]
-         verbose_name = "Termos ou Fraseologismos"
+#        verbose_name = "Termos ou Fraseologismos"
          verbose_name_plural = "Termos ou Fraseologismos"
 
 #     def was_published_today(self):
