@@ -1,3 +1,4 @@
+# _*_ coding: utf8 _*_
 # Django settings for cons project.
 
 
