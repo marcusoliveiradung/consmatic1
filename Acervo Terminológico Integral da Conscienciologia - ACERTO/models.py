@@ -100,7 +100,7 @@ class Termo_ou_Fraseologismo(models.Model):
 
      class Meta:
          ordering = ["nome"]
-         verbose_name = "Termos ou Fraseologismos"
+#        verbose_name = "Termos ou Fraseologismos"
          verbose_name_plural = "Termos ou Fraseologismos"
 
 #     def was_published_today(self):
@@ -143,7 +143,7 @@ class Entrada(models.Model):
 
      class Meta:
          #ordering = ["sequencia"]
-#        verbose_name = "FICHA do TERMO ou FRASEOLOGISMO CONSCIENCIOLÓGICO:"
+         verbose_name = "FICHA do TERMO ou FRASEOLOGISMO CONSCIENCIOLÓGICO:"
          verbose_name_plural = "FICHA do TERMO ou FRASEOLOGISMO CONSCIENCIOLÓGICO:" 
 
 
