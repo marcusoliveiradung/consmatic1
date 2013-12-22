@@ -1,4 +1,6 @@
+# _*_ coding: utf8 _*_
 from django.contrib import admin
+
 
 from holoteca.models  import  Dominiologia_Atribut, Tipo_Atributo, Config_Atribut_ATTR
 from Acervo Terminológico Integral da Consciencienciologia - ACERTO.models import  Idioma, Variavel, Termo_ou_Fraseologismo,  Entrada #, Autor ,Conteudo,
