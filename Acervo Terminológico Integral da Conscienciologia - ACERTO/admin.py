@@ -2,7 +2,7 @@
 from django.contrib import admin
 
 from holoteca.models  import  Dominiologia_Atribut, Tipo_Atributo, Config_Atribut_ATTR
-from Acervo Terminológico Integral da Conscienciologia - ACERTO.models import  Idioma, Variavel, Termo_ou_Fraseologismo,  Entrada 
+from 'Acervo Terminológico Integral da Conscienciologia - ACERTO'.models import  Idioma, Variavel, Termo_ou_Fraseologismo,  Entrada 
 #, Autor ,Conteudo,
 #****************
 class EntradaInline(admin.StackedInline):
