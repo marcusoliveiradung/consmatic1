@@ -16,7 +16,7 @@ class EntradaInline(admin.StackedInline):
           ]
           
 class EspecialidadeInline(admin.StackedInline):
-     model =  Entrada     
+     model =  Especialidade
         
 #**************************
 #class DominioInline(admin.StackedInline):
