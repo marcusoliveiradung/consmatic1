@@ -50,7 +50,7 @@ class Termo_ou_FraseologismoAdmin(admin.ModelAdmin):
      #ordering = ['sequencia']
      extra = 3
 #*************************
-class Termo_EspecialidadeAdminou_FraseologismoAdmin(admin.ModelAdmin):
+class Termo_EspecialidadeAdmin(admin.ModelAdmin):
      model =  Termo_ou_Fraseologismo #, Config_Atribut_ATTR]
      #search_fields = ['nome']
      #list_filter = ['idioma_orig','especialidade_central'] 
