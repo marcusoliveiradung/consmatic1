@@ -138,7 +138,8 @@ INSTALLED_APPS = (
     'ic_ec',
     'holoteca',
     'enciclopedia',   
-    'Acervo Terminológico Integral da Conscienciologia - ACERTO',
+    'projeto_cineo_acerto',
+    #'ACERTO',
     'ibge',
     )
 
