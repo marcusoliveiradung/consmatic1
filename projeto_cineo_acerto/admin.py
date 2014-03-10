@@ -68,7 +68,9 @@ admin.site.register(Variavel, VariavelAdmin)
 #admin.site.register(Autor)
 admin.site.register(Idioma)
 admin.site.register(Termo_ou_Fraseologismo,Termo_ou_FraseologismoAdmin)
-admin.site.register( Termo_EspecialidadeAdmin)
+admin.site.register(Especialidade, Termo_EspecialidadeAdmin)
+
+
 #admin.site.register(Atributo_Admin)
 #admin.site.register(Entrada)#,EntradaAdmin)
 #admin.site.register(Conteudo)
