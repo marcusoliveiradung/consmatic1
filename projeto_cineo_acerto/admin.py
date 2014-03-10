@@ -3,7 +3,7 @@ from django.contrib import admin
 
 from corpus.models import Especialidade
 from holoteca.models  import  Dominiologia_Atribut, Tipo_Atributo, Config_Atribut_ATTR
-from Acervo Terminológico Integral da Conscienciologia - ACERTO.models import  Idioma, Variavel, Termo_ou_Fraseologismo,  Entrada 
+from projeto_cineo_acerto.models import  Idioma, Variavel, Termo_ou_Fraseologismo,  Entrada 
 #, Autor ,Conteudo,
 #****************
 class EntradaInline(admin.StackedInline):
