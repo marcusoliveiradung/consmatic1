@@ -70,7 +70,8 @@ STATIC_URL = '/static/'
 # URL prefix for admin media -- CSS, JavaScript and images. Make sure to use a
 # trailing slash.
 # Examples: "http://foo.com/media/", "/media/".
-ADMIN_MEDIA_PREFIX = ('/home/marcus/Area de Trabalho/',
+ADMIN_MEDIA_PREFIX = ('/home/marcus/Dropbox/',
+                      '/home/marcusdodung/Area de Trabalho/', 
                       '/home/recons/webapps/intranet/consmatic/_docs_site/_docs_site/conteudo')
                     #,'/static/admin/')  
         # Incluir a trilha?
