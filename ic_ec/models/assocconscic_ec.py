@@ -21,7 +21,7 @@ class AssocConscIc_Ec(models.Model):
     area_trabalho =  models.ManyToManyField(Area,blank='True', null='True') #through = "AssocConscin_Area",
     #areaic_assoc = models.ForeignKey(Area)
     tipo_assocconscic_ec = models.ForeignKey(TipoAssocConscIc_Ec)
-    consc =  models.ForeignKey(Consc, blank='True', null='True')
+    consc =  models.ForeignKey(Consc)
     ind_tenepes = models.NullBooleanField()
     ind_docencia = models.NullBooleanField()
     obs_docencia = models.TextField(blank='True')    
