@@ -10,8 +10,9 @@ from Acervo Terminológico Integral da Conscienciologia - ACERTO.models import  
      model =  Entrada     
      fieldsets = [
      ('Info Data', {'fields': ['termo','variavel', 'conteudo', ],#'self.variavel.atributo',
-     #'classes': ['collapse']# 
      }),
+     search_fields = ['termo','variavel', 'conteudo']
+     list_filter = ['variavel']
           ]
         
 #**************************
