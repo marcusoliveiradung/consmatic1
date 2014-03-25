@@ -81,7 +81,7 @@ class Termo_ou_Fraseologismo(models.Model):
          #Entram pelo módulo de segurança (horizontal), atualmente no final da lista de campos na tela correspondente a esse modelo no ADMIN
      nome = models.CharField(max_length=150) 
      #Entrada: Ent. - Termo ou Fraseologismo (Lema).
-     categ_gram = models.CharField(max_length=02) 
+     categ_gram = models.CharField(max_length=02, blank= 'True', null='True) 
      data_criacao = models.DateField(blank= 'True', null='True')
      especialidade_central = models.ForeignKey(Especialidade,related_name= 'especialidade_acerto', blank= 'True', null='True')
      idioma_orig = models.ForeignKey(Idioma,related_name= 'idioma_acerto', blank= 'True', null='True')
