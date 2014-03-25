@@ -77,8 +77,10 @@ class Variavel(models.Model):
 
 # CLASS TERMO
 class Termo_ou_Fraseologismo(models.Model):
-#    #campos temporarios
+     #Data de Criação/Nome do Terminólogo Fichador
+         #Entram pelo módulo de segurança (horizontal), atualmente no final da lista de campos na tela correspondente a esse modelo no ADMIN
      nome = models.CharField(max_length=150) 
+     #Entrada: Ent. - Termo ou Fraseologismo (Lema).
      data_criacao = models.DateField(blank= 'True', null='True')
      especialidade_central = models.ForeignKey(Especialidade,related_name= 'especialidade_acerto', blank= 'True', null='True')
      idioma_orig = models.ForeignKey(Idioma,related_name= 'idioma_acerto', blank= 'True', null='True')
