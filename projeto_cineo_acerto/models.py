@@ -78,13 +78,20 @@ class Variavel(models.Model):
 # CLASS TERMO
 class Termo_ou_Fraseologismo(models.Model):
      #Data de Criação/Nome do Terminólogo Fichador
-         #Entram pelo módulo de segurança (horizontal), atualmente no final da lista de campos na tela correspondente a esse modelo no ADMIN
+     data_criacao = models.DateField(blank= 'True', null='True')
+     ########O campo Nome de Termiólogo Fichador entra pelo módulo de segurança (horizontal), atualmente no final da lista de campos na tela correspondente a esse modelo no ADMIN
      nome = models.CharField(max_length=150) 
      #Entrada: Ent. - Termo ou Fraseologismo (Lema).
      categ_gram = models.CharField(max_length=02, blank= 'True', null='True') 
-     data_criacao = models.DateField(blank= 'True', null='True')
+     #Referência ou Categoria Gramatical : Cat. - Referências Gramativcais (Classe e Gênero)
+     Reducao = models.CharField(max_length=02, blank= 'True', null='True') 
+     #Redução: Rd. - (Abreviatura: Siglaçãoou acronímia, qdo houver)
      especialidade_central = models.ForeignKey(Especialidade,related_name= 'especialidade_acerto', blank= 'True', null='True')
      idioma_orig = models.ForeignKey(Idioma,related_name= 'idioma_acerto', blank= 'True', null='True')
+     transc_fonet= models.TextField(blank= 'True', null='True') 
+     #Transcrição Fonética: Tf.
+     status_termo= models.CharField(max_length=02, blank= 'True', null='True')
+     #Status do Termo: St. (Normalizado - Nor. ou Proposição Neológica - Neo)
      traduciologia = models.ManyToManyField("self", blank= 'True', null='True') #,related_name= 'traducao'
      remissiologia = models.ManyToManyField("self", blank= 'True', null='True')   #,related_name= 'remissao
       
