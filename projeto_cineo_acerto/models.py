@@ -90,7 +90,7 @@ class Termo_ou_Fraseologismo(models.Model):
      idioma_orig = models.ForeignKey(Idioma,related_name= 'idioma_acerto', blank= 'True', null='True')
      transc_fonet= models.TextField(blank= 'True') 
      #Transcrição Fonética: Tf.
-     status_termo= models.CharField(max_length=02, blank= 'True', null='True')
+     status_termo= models.CharField(max_length=02,blank='True')
      #Status do Termo: St. (Normalizado - Nor. ou Proposição Neológica - Neo)
      traduciologia = models.ManyToManyField("self", blank= 'True', null='True') #,related_name= 'traducao'
      remissiologia = models.ManyToManyField("self", blank= 'True', null='True')   #,related_name= 'remissao
