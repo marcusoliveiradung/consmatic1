@@ -84,7 +84,7 @@ class Termo_ou_Fraseologismo(models.Model):
      #Entrada: Ent. - Termo ou Fraseologismo (Lema).
      categ_gram = models.CharField(max_length=02, blank= 'True', null='True') 
      #Referência ou Categoria Gramatical : Cat. - Referências Gramativcais (Classe e Gênero)
-     Reducao = models.CharField(max_length=02, blank= 'True', null='True') 
+     reducao = models.CharField(max_length=02, blank= 'True', null='True') 
      #Redução: Rd. - (Abreviatura: Siglaçãoou acronímia, qdo houver)
      especialidade_central = models.ForeignKey(Especialidade,related_name= 'especialidade_acerto', blank= 'True', null='True')
      idioma_orig = models.ForeignKey(Idioma,related_name= 'idioma_acerto', blank= 'True', null='True')
