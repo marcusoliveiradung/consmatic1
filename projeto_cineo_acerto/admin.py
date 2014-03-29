@@ -12,7 +12,10 @@ class EntradaInline(admin.StackedInline):
      ('Info Data', {'fields': ['termo','variavel', 'conteudo', ],#'self.variavel.atributo',
      #'classes': ['collapse']# 
      }),
-          ]
+     ]
+     list_filter = ['variavel'] 
+     
+     
 class EspecialidadeInline(admin.StackedInline):
      model =  Especialidade        
 #**************************
@@ -47,13 +50,13 @@ class Termo_ou_FraseologismoAdmin(admin.ModelAdmin):
      #ordering = ['sequencia']
      extra = 3
 
-class Entrada(admin.ModelAdmin):
-     model =  Entrada     
-     fieldsets = [
-     ('Info Data', {'fields': ['termo','variavel', 'conteudo', ],#'self.variavel.atributo',
-     #'classes': ['collapse']# 
-     })],
-     list_filter = ['variavel'] 
+#class Entrada(admin.ModelAdmin):
+#     model =  Entrada     
+#     fieldsets = [
+#     ('Info Data', {'fields': ['termo','variavel', 'conteudo', ],#'self.variavel.atributo',
+#     #'classes': ['collapse']# 
+#     })],
+#     list_filter = ['variavel'] 
              
 #*************************
 class Termo_EspecialidadeAdmin(admin.ModelAdmin):
@@ -80,6 +83,6 @@ admin.site.register(Termo_ou_Fraseologismo,Termo_ou_FraseologismoAdmin)
 
 
 #admin.site.register(Atributo_Admin)
-admin.site.register(Entrada)#,EntradaAdmin)
+#admin.site.register(Entrada)#,EntradaAdmin)
 #admin.site.register(Conteudo)
 #********************************
