@@ -42,7 +42,7 @@ class VariavelAdmin(admin.ModelAdmin):
 class Termo_ou_FraseologismoAdmin(admin.ModelAdmin):
      model =  Termo_ou_Fraseologismo #, Config_Atribut_ATTR]
      search_fields = ['nome']
-     list_filter = ['idioma_orig','especialidade_central'] 
+     list_filter = ['variavel','idioma_orig','especialidade_central'] 
      inlines = [EntradaInline]
      #ordering = ['sequencia']
      extra = 3
