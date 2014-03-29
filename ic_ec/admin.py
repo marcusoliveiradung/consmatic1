@@ -94,6 +94,10 @@ class AreaAdmin(admin.ModelAdmin): #(admin.ModelAdmin)
 class FaseInline(admin.TabularInline):
     model = FaseProjeto
     fieldsets = [  'classes':['collapse']],
+    #fieldsets = [
+    #('Info Data', {'fields': ['artefato','teca','ind_insercao_primaria','obs'],
+    #'classes': ['collapse']}),
+    #]
     extra = 4
 
 
