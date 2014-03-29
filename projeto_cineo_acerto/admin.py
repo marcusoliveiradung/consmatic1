@@ -52,9 +52,9 @@ class Entrada(admin.ModelAdmin):
      fieldsets = [
      ('Info Data', {'fields': ['termo','variavel', 'conteudo', ],#'self.variavel.atributo',
      #'classes': ['collapse']# 
-     }),
+     })],
      list_filter = ['variavel'] 
-          ]     
+             
 #*************************
 class Termo_EspecialidadeAdmin(admin.ModelAdmin):
      model =  Termo_ou_Fraseologismo  #, Config_Atribut_ATTR]
