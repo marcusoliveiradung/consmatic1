@@ -15,7 +15,7 @@ from ic_ec.models.projetoatividade import Atividade,  Projeto,\
  # Conteudo_AssocConscin #, Conteudo_Area
 
 #TIPOASSOCCONSCIN ADMIN
-class AssocConscIc_EcInline(admin.TabularInline):
+class AssocConscIc_EcInline(admin.StackedInline):
 #     fieldsets = [
 #     (None,{'fields': ['descricao']}),
 #     ]
@@ -45,7 +45,7 @@ class ParticipacaoInline(admin.StackedInline):
     #ind_presenca = models.NullBooleanField(blank=True, null=True)
     #percentual_presenca = models.SmallIntegerField(blank=True, null=True)
     #----------------------------------------------------
-class AtividadeInline(admin.TabularInline):
+class AtividadeInline(admin.StackedInline):
 #     fieldsets = [
 #     (None,{'fields': ['descricao']}),
 #     ]
@@ -91,7 +91,7 @@ class AreaAdmin(admin.ModelAdmin): #(admin.ModelAdmin)
     extra = 10
     
 
-class FaseInline(admin.TabularInline):
+class FaseInline(admin.StackedInline):
     model = FaseProjeto
     #fieldsets = [  'classes':['collapse']],
     fieldsets = [
@@ -99,40 +99,22 @@ class FaseInline(admin.TabularInline):
     'classes': ['collapse']}),
     ]
     
-class ConteudoInline(admin.TabularInline):
-    model = Conteudo
-    extra = 3
-
-class PortfolioInline(admin.TabularInline):
+  
+class PortfolioInline(admin.StackedInline):
     model = Portfolio_Projeto
-    extra = 3
-
-class Portfolio_ProjetoAdmin(admin.ModelAdmin):
-    model = Conteudo
-    inlines = [PortfolioInline]
-    extra = 3
-
+  
 
 class ProjetoAdmin(admin.ModelAdmin):
     model = Projeto
     inlines = [FaseInline, PortfolioInline]
     extra = 3
     
-
-
-
-    
-#class ProjetoInline(admin.TabularInline):
-#    model = Projeto
-#    extra = 3
-    
-#class AreaProjetoAdmin(admin.ModelAdmin):
-#    model = Area
-#    inlines = [ProjetoInline]
-#    extra = 3
-#
-#
-
+class ConteudoInline(admin.StackedInline):
+    model = Conteudo
+    fieldsets = [
+    ('Info Data', {'fields': ['nome','descricao','artefato_area','funcaoatividade','assocconscic_ec'
+    ,'conteudo'],  'classes': ['collapse']}),
+    ]
 
 class TipoConteudoAdmin(admin.ModelAdmin):
     model = TipoConteudo
