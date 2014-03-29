@@ -39,14 +39,14 @@ class EntradaInline(admin.StackedInline):
      fieldsets = [
      ('Info Data', {'fields': ['termo','variavel', 'conteudo' ],'classes': ['collapse']}),
      ]
-     #list_filter = ['variavel'] 
+     list_filter = ['variavel'] 
      
 #********************     
 class Termo_ou_FraseologismoAdmin(admin.ModelAdmin):
      model =  Termo_ou_Fraseologismo #, Config_Atribut_ATTR]
      search_fields = ['nome']
      inlines = [EntradaInline]
-     list_filter = ['variavel','idioma_orig','especialidade_central'] 
+     list_filter = ['idioma_orig','especialidade_central'] 
      #ordering = ['sequencia']
      extra = 3
 #********************
