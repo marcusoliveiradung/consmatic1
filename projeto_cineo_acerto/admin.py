@@ -6,18 +6,10 @@ from holoteca.models  import  Dominiologia_Atribut, Tipo_Atributo, Config_Atribu
 from projeto_cineo_acerto.models import  Idioma, Variavel, Termo_ou_Fraseologismo,  Entrada 
 #, Autor ,Conteudo,
 #****************
-class EntradaInline(admin.StackedInline):
-     model =  Entrada     
-     fieldsets = [
-     ('Info Data', {'fields': ['termo','variavel', 'conteudo', ],#'self.variavel.atributo',
-     #'classes': ['collapse']# 
-     }),
-     ]
-     list_filter = ['variavel'] 
+
      
      
-class EspecialidadeInline(admin.StackedInline):
-     model =  Especialidade        
+  
 #**************************
 #class DominioInline(admin.StackedInline):
 #      model =  Dominiologia_Atribut
@@ -42,15 +34,24 @@ class VariavelAdmin(admin.ModelAdmin):
      
        
 #********************
+class EntradaInline(admin.StackedInline):
+     model =  Entrada     
+     fieldsets = [
+     ('Info Data', {'fields': ['termo','variavel', 'conteudo', ],#'self.variavel.atributo',
+     #'classes': ['collapse']# 
+     }),
+     ]
+     #list_filter = ['variavel'] 
+     
 class Termo_ou_FraseologismoAdmin(admin.ModelAdmin):
      model =  Termo_ou_Fraseologismo #, Config_Atribut_ATTR]
      search_fields = ['nome']
-     list_filter = ['idioma_orig','especialidade_central'] 
      inlines = [EntradaInline]
+     list_filter = ['variavel','idioma_orig','especialidade_central'] 
      #ordering = ['sequencia']
      extra = 3
 
-#class Entrada(admin.ModelAdmin):
+class EntradaAdmin(admin.ModelAdmin):
 #     model =  Entrada     
 #     fieldsets = [
 #     ('Info Data', {'fields': ['termo','variavel', 'conteudo', ],#'self.variavel.atributo',
@@ -59,6 +60,9 @@ class Termo_ou_FraseologismoAdmin(admin.ModelAdmin):
 #     list_filter = ['variavel'] 
              
 #*************************
+class EspecialidadeInline(admin.StackedInline):
+     model =  Especialidade      
+     
 class Termo_EspecialidadeAdmin(admin.ModelAdmin):
      model =  Termo_ou_Fraseologismo  #, Config_Atribut_ATTR]
      #search_fields = ['nome']
