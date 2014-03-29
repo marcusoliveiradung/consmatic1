@@ -93,6 +93,7 @@ class AreaAdmin(admin.ModelAdmin): #(admin.ModelAdmin)
 
 class FaseInline(admin.TabularInline):
     model = FaseProjeto
+    fieldsets = [  'classes':['collapse']],
     extra = 4
 
 
