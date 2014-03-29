@@ -98,9 +98,7 @@ class FaseInline(admin.TabularInline):
     ('Info Data', {'fields': ['codigo_fase','nome','descricao','inicio','fim','projeto','fase_projeto_sup'],
     'classes': ['collapse']}),
     ]
-    extra = 4
-
-
+    
 class ConteudoInline(admin.TabularInline):
     model = Conteudo
     extra = 3
