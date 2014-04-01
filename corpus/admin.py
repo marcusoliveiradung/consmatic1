@@ -10,7 +10,7 @@ class EspecialidadeAdmin(admin.ModelAdmin):
      search_fields = ['nome']
      list_filter = ['ordem_logica','ind_subespec', 'espec_sup'] 
 #********************************
-admin.site.register(Especialidade) #, EspecialidadeAdmin)
+#admin.site.register(Especialidade) #, EspecialidadeAdmin)
 admin.site.register(Escala_Evolutiva)
 admin.site.register(Faixas_Etaria)
 admin.site.register(Procedex)
