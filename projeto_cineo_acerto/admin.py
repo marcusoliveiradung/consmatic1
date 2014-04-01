@@ -42,6 +42,9 @@ class EntradaInline(admin.StackedInline):
      list_filter = ['variavel'] 
      
 #********************     
+class TermoEspecialidadeInline(admin.StackedInline):
+     model = Termo_ou_Fraseologismo  
+
 class Termo_ou_FraseologismoAdmin(admin.ModelAdmin):
      model =  Termo_ou_Fraseologismo #, Config_Atribut_ATTR]
      search_fields = ['nome']
@@ -60,14 +63,13 @@ class Termo_ou_FraseologismoAdmin(admin.ModelAdmin):
              
 #*************************
 
-class Termo_EspecialidadeInline(admin.StackedInline):
-     model = Termo_ou_Fraseologismo       
+  
      
 class Termo_EspecialidadeAdmin(admin.ModelAdmin):
      model =  Especialidade  #, Config_Atribut_ATTR]
      #search_fields = ['nome']
      #list_filter = ['idioma_orig','especialidade_central'] 
-     inlines = [Termo_EspecialidadeInline]
+     inlines = [TermoEspecialidadeInline]
      #ordering = ['sequencia']
      extra = 10
  #********************     
@@ -82,8 +84,7 @@ class Termo_EspecialidadeAdmin(admin.ModelAdmin):
 admin.site.register(Variavel, VariavelAdmin)
 #admin.site.register(Autor)
 #admin.site.register(Idioma)
-admin.site.register(Termo_ou_Fraseologismo, Termo_ou_FraseologismoAdmin)
-admin.site.register(Termo_EspecialidadeAdmin)
+admin.site.register(Termo_ou_Fraseologismo, Termo_ou_FraseologismoAdmin,TermoEspecialidadeAdmin)
 
 
 #admin.site.register(Atributo_Admin)
