@@ -149,11 +149,11 @@ class Entrada(models.Model):
 #    data_criacao = models.DateTimeField('Data Inicial do Verbete:')
 #    autor = models.CharField(max_length=400) 
      def __unicode__(self):
-         return self.termo.nome  + ' / ' + self.variavel.nome + ' / '  +  self.conteudo 
+         return self.termo.nome  + ' /    ' + self.variavel.nome + ' /      '  +  self.conteudo 
 
      class Meta:
          #ordering = ["sequencia"]
-         verbose_name = ""#"ICHA do TERMO ou FRASEOLOGISMO CONSCIENCIOLÓGICO:"
+         verbose_name = " "#"ICHA do TERMO ou FRASEOLOGISMO CONSCIENCIOLÓGICO:"
          verbose_name_plural = "FICHAS do TERMO ou FRASEOLOGISMO CONSCIENCIOLÓGICO:" 
 
 
