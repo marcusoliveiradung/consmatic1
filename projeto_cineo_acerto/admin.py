@@ -68,11 +68,11 @@ class Termo_ou_FraseologismoAdmin(admin.ModelAdmin):
      
 class TermoEspecialidadeAdmin(admin.ModelAdmin):
      model =  Especialidade  #, Config_Atribut_ATTR]
-     #search_fields = ['nome']
+     search_fields = ['nome']
      #list_filter = ['idioma_orig','especialidade_central'] 
      inlines = [TermoEspecialidadeInline]
      #ordering = ['sequencia']
-     extra = 10
+     extra = 05
  #********************     
 
  #********************
