@@ -52,13 +52,13 @@ class Termo_ou_FraseologismoAdmin(admin.ModelAdmin):
      list_filter = ['idioma_orig','especialidade_central'] 
      #ordering = ['sequencia']
      extra = 3
-#********************
+#********************
 #class EntradaAdmin(admin.ModelAdmin):
 #     model =  Entrada     
 #     fieldsets = [
 #     ('Info Data', {'fields': ['termo','variavel', 'conteudo', ],#'self.variavel.atributo',
 #     #'classes': ['class TermoEspecialidadeInline(admin.StackedInline):
-     model = Termo_ou_Fraseologismo  collapse']# 
+#     model = Termo_ou_Fraseologismo  collapse']# 
 #     })],
 #     list_filter = ['variavel'] 
              
