@@ -82,7 +82,7 @@ class TermoEspecialidadeAdmin(admin.ModelAdmin):
  #    extra = 3
    
 #******************************************
-#admin.site.register(Especialidade,TermoEspecialidadeAdmin)
+admin.site.register(Especialidade,TermoEspecialidadeAdmin)
 admin.site.register(Variavel, VariavelAdmin)
 #admin.site.register(Autor)
 #admin.site.register(Idioma)
