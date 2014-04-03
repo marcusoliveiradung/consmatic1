@@ -37,7 +37,8 @@ class VariavelAdmin(admin.ModelAdmin):
 class EntradaInline(admin.StackedInline):
      model =  Entrada     
      fieldsets = [
-     ('Detalhe', {'fields': ['termo','variavel', 'conteudo' ]#,'classes': ['collapse']}),
+     ('Detalhe', {'fields': ['termo','variavel', 'conteudo' ]#,'classes': ['collapse']
+     }),
      ]
      search_fields = ['conteudo']
      list_filter = ['variavel'] 
