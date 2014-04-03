@@ -150,7 +150,7 @@ class Entrada(models.Model):
 #    autor = models.CharField(max_length=400) 
      #def __unicode__(self):
      #    return self.termo.nome  + ' /    ' + self.variavel.nome + ' /      '  +  self.conteudo 
-     @
+     
      class Meta:
          #ordering = ["sequencia"]
          verbose_name = " "#"ICHA do TERMO ou FRASEOLOGISMO CONSCIENCIOLÓGICO:"
