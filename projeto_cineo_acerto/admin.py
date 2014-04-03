@@ -37,7 +37,7 @@ class VariavelAdmin(admin.ModelAdmin):
 class EntradaInline(admin.StackedInline):
      model =  Entrada     
      fieldsets = [
-     ('Info Data', {'fields': ['termo','variavel', 'conteudo' ],'classes': ['collapse']}),
+     ('Detalhe', {'fields': ['termo','variavel', 'conteudo' ],'classes': ['collapse']}),
      ]
      list_filter = ['variavel'] 
      
@@ -47,11 +47,17 @@ class TermoEspecialidadeInline(admin.StackedInline):
 
 class Termo_ou_FraseologismoAdmin(admin.ModelAdmin):
      model =  Termo_ou_Fraseologismo #, Config_Atribut_ATTR]
+     list_filter = ['idioma_orig','especialidade_central'] 
+     list_display = ('nome', 'data_criacao','especialidade_central')
+     fieldsets = [
+        (None,           {'fields': ['data_criacao']}),
+        #('data_criacao', {'fields': ['pub_date']}),
+     ]
      search_fields = ['nome']
      inlines = [EntradaInline]
-     list_filter = ['idioma_orig','especialidade_central'] 
+     
      #ordering = ['sequencia']
-     extra = 3
+     extra = 1
 #********************
 #class EntradaAdmin(admin.ModelAdmin):
 #     model =  Entrada     
