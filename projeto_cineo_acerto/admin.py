@@ -80,7 +80,7 @@ class TermoEspecialidadeAdmin(admin.ModelAdmin):
      list_filter = ['ordem_logica','ind_subespec'] 
      inlines = [TermoEspecialidadeInline]
      #ordering = ['sequencia']
-     extra = 01
+     #extra = 01
  #********************     
 
  #********************
