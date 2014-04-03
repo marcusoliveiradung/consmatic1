@@ -59,7 +59,7 @@ class Termo_ou_FraseologismoAdmin(admin.ModelAdmin):
      inlines = [EntradaInline]
      
      #ordering = ['sequencia']
-     extra = 2
+     extra =0 
 #********************
 #class EntradaAdmin(admin.ModelAdmin):
 #     model =  Entrada     
