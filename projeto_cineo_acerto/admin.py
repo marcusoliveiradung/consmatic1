@@ -59,7 +59,7 @@ class Termo_ou_FraseologismoAdmin(admin.ModelAdmin):
      inlines = [EntradaInline]
      
      #ordering = ['sequencia']
-     extra =0 
+     #extra =0 
 #********************
 #class EntradaAdmin(admin.ModelAdmin):
 #     model =  Entrada     
@@ -80,7 +80,7 @@ class TermoEspecialidadeAdmin(admin.ModelAdmin):
      list_filter = ['ordem_logica','ind_subespec'] 
      inlines = [TermoEspecialidadeInline]
      #ordering = ['sequencia']
-     extra = 05
+     extra = 01
  #********************     
 
  #********************
