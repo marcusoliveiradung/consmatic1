@@ -88,7 +88,7 @@ class Termo_ou_Fraseologismo(models.Model):
      #Redução: Rd. - (Abreviatura: Siglaçãoou acronímia, qdo houver)
      especialidade_central = models.ForeignKey(Especialidade,related_name= 'especialidade_acerto', blank= 'True', null='True')
      idioma_orig = models.ForeignKey(Idioma,related_name= 'idioma_acerto', blank= 'True', null='True')
-     transc_fonet= models.TextField(blank= 'True') 
+     transc_fonet= models.CharField(max_length=20, blank= 'True', null='True') 
      #Transcrição Fonética: Tf.
      status_termo= models.CharField(max_length=02,blank='True')
      #Status do Termo: St. (Normalizado - Nor. ou Proposição Neológica - Neo)
