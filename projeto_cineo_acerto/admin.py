@@ -49,11 +49,11 @@ class Termo_ou_FraseologismoAdmin(admin.ModelAdmin):
      model =  Termo_ou_Fraseologismo #, Config_Atribut_ATTR]
      list_filter = ['idioma_orig','especialidade_central'] 
      list_display = ('nome', 'data_criacao','especialidade_central')
-     fieldsets = [
-        (None,           {'fields': ['data_criacao']}),
+     #fieldsets
+     ##(None,           {'fields': ['data_criacao']}),
         #('data_criacao', {'fields': ['pub_date']}),
-     ]
-     search_fields = ['nome']
+     #]
+     search_fields = ['nome','conteudo']
      inlines = [EntradaInline]
      
      #ordering = ['sequencia']
