@@ -87,13 +87,19 @@ class Termo_ou_Fraseologismo(models.Model):
      reducao = models.CharField(max_length=02, blank= 'True', null='True') 
      #Redução: Rd. - (Abreviatura: Siglaçãoou acronímia, qdo houver)
      especialidade_central = models.ForeignKey(Especialidade,related_name= 'especialidade_acerto', blank= 'True', null='True')
+     #FK para Especialidade (classe Externa) 
+     Tipo_termo = models.CharField(max_length=03, blank= 'True', null='True') 
+     #Tipo do Termo ( ou Fraseologismo). Por enquanto, o domínio é:  TRM - Termo; FRA - Fraselogismo; ESP - Especialidades Conscienciológicas) 
      idioma_orig = models.ForeignKey(Idioma,related_name= 'idioma_acerto', blank= 'True', null='True')
+     #FK para Idioma (classe Externa)
      transc_fonet= models.CharField(max_length=20, blank= 'True', null='True') 
      #Transcrição Fonética: Tf.
      status_termo= models.CharField(max_length=02,blank='True')
      #Status do Termo: St. (Normalizado - Nor. ou Proposição Neológica - Neo)
      traduciologia = models.ManyToManyField("self", blank= 'True', null='True') #,related_name= 'traducao'
+     #AutoFK - Faz referência 'a própria classe (Termo), instâncias de termos de tradução para o termo.
      remissiologia = models.ManyToManyField("self", blank= 'True', null='True')   #,related_name= 'remissao
+     #AutoFK - Faz referência 'a própria classe (Termo), instâncias de termos de referência relevantes para o termo.
       
 
      #tema = models.ForeignKey(Tema,related_name= 'conscin_acervo', blank= 'True', null='True')
