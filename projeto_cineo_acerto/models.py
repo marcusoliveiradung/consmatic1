@@ -78,7 +78,7 @@ class Variavel(models.Model):
 # CLASS TERMO
 class Termo_ou_Fraseologismo(models.Model):
      #Data de Criação/Nome do Terminólogo Fichador
-     data_criacao = models.DateField(blank= 'True', null='True')
+     data_criacao = models.DateTimeField(auto_now_add=TrueDateField,blank= 'True', null='True')
      ########O campo Nome de Termiólogo Fichador entra pelo módulo de segurança (horizontal), atualmente no final da lista de campos na tela correspondente a esse modelo no ADMIN
      nome = models.CharField(max_length=150) 
      #Entrada: Ent. - Termo ou Fraseologismo (Lema).
