@@ -29,7 +29,7 @@ class VariavelInline(admin.StackedInline):
 #*********************
 class VariavelAdmin(admin.ModelAdmin):
      model =  Variavel
-     ordering = ['sequencia']
+     ordering = ['prioridade','sequencia']
      list_filter = ['prioridade'] 
      
        
