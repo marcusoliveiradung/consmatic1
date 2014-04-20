@@ -20,7 +20,7 @@ from projeto_cineo_acerto.models import  Idioma, Variavel, Termo_ou_Fraseologism
 #********************
 class VariavelInline(admin.StackedInline):
      model =  Variavel     
-     ordering = ['sequencia']
+     ordering = ['prioridade','sequencia']
      #fieldsets = [
      #('Info Data', {'fields': ['termo','variavel', 'conteudo', ],#'self.variavel.atributo',
      #'classes': ['collapse']# 
