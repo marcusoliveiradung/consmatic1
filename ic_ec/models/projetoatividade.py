@@ -25,7 +25,7 @@ class Projeto(models.Model):
     #artefatos_projeto = models.ManyToManyField(Conteudo, blank= 'True', null='True') #
     bola = models.ManyToManyField(Conteudo, through= "Portfolio_Projeto") #, through= "Utilizacao_Conteudo")  
     reported_by = models.ForeignKey(User)
-    created_at = models.DateTimeField('Hora',auto_now_add=True) #
+    created_at = models.DateTimeField('Hora', blank='True', null='True') #
 
     def __unicode__(self):
         return self.nome
