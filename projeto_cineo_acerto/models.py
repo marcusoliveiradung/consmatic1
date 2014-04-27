@@ -117,7 +117,7 @@ class Termo_ou_Fraseologismo(models.Model):
      # data_criacao = models.DateTimeField(auto_now_add='True' ,blank= 'True', null='True')
      #autor =  models.ForeignKey(Autor,related_name= 'autor_acerto', blank= 'True', null='True')
 
-     data_criacao = models.DateTimeField('Data Criação/Última Alteração:', auto_now_add='True')
+     data_criacao = models.DateTimeField('Data Criação/Última Alteração:',blank= 'True', null='True')
 #    autor = models.CharField(max_length=400) 
      
      def __unicode__(self):
