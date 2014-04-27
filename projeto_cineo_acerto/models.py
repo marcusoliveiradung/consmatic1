@@ -77,8 +77,7 @@ class Variavel(models.Model):
 
 # CLASS TERMO
 class Termo_ou_Fraseologismo(models.Model):
-     #Data de Criação/Nome do Terminólogo Fichador
-     data_criacao = models.DateTimeField(auto_now_add='True' ,blank= 'True', null='True')
+     
      ########O campo Nome de Termiólogo Fichador entra pelo módulo de segurança (horizontal), atualmente no final da lista de campos na tela correspondente a esse modelo no ADMIN
      nome = models.CharField(max_length=150) 
      #Entrada: Ent. - Termo ou Fraseologismo (Lema).
@@ -113,12 +112,12 @@ class Termo_ou_Fraseologismo(models.Model):
       
 
      #tema = models.ForeignKey(Tema,related_name= 'conscin_acervo', blank= 'True', null='True')
+     
+     #Data de Criação/Nome do Terminólogo Fichador
+     # data_criacao = models.DateTimeField(auto_now_add='True' ,blank= 'True', null='True')
      #autor =  models.ForeignKey(Autor,related_name= 'autor_acerto', blank= 'True', null='True')
-#     num_apresentacao = models.IntegerField() 
-          #paginas = models.IntegerField()
-     #remissiologia_id = models.IntegerField()
-     #remissiologia_id1= models.IntegerField()  
-#    data_criacao = models.DateTimeField('Data Inicial do Verbete:')
+
+     data_criacao = models.DateTimeField('Data Inicial do Verbete:')
 #    autor = models.CharField(max_length=400) 
      
      def __unicode__(self):
