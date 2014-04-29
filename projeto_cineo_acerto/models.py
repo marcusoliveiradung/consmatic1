@@ -14,6 +14,7 @@ import datetime
 from django.contrib.auth.models import User, Group
 
 #Demais Classes "externas" associadas das APIs das/para as subáreas CONSC e Holoteca principalmente.
+
 from cons.models  import Consc 
 from corpus.models import Especialidade,Tema
 from holoteca.models import Dominiologia_Atribut, Config_Atribut_ATTR
@@ -91,10 +92,10 @@ class Termo_ou_Fraseologismo(models.Model):
 
      #data_criacao = models.DateTimeField('Data de Criação da Ficha:',blank= 'True', null='True')
 #    autor = models.CharField(max_length=400) 
-     reported_by = models.ForeignKey(User)
+     reported_by = models.ForeignKey('Terminologo', User)#Terminologo
      created_at = models.DateTimeField('Data/Hora de Criação da Ficha:', blank='True', null='True')
      ########O campo Nome de Termiólogo Fichador entra pelo módulo de segurança (horizontal), atualmente no final da lista de campos na tela correspondente a esse modelo no ADMIN
-     nome = models.CharField(max_length=150) 
+     nome = models.CharField('Entrada - termo ou fraseologismo:' max_length=150) 
      #Entrada: Ent. - Termo ou Fraseologismo (Lema).
      
      ### Os seguintes attrs saem da classe básica de Terminologia (TERMoS), passando para a CLASSE das VARIÁVEIS:
@@ -138,9 +139,9 @@ class Termo_ou_Fraseologismo(models.Model):
 #        verbose_name = "Termos ou Fraseologismos"
          verbose_name_plural = "Termos ou Fraseologismos"
          
-         permissions = (
-        ('view_projeto', 'View projeto'),
-        )
+         #permissions = (
+        #('view_projeto', 'View projeto'),
+        #)
 
 #     def was_published_today(self):
 #        return self.data_criacao.date() == datetime.date.today()
