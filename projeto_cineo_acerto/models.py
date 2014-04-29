@@ -9,6 +9,11 @@ import datetime
 
 
 #Importação de referência de Classes externas ( de outras áreas)
+
+#User authentication in Django
+from django.contrib.auth.models import User, Group
+
+#Demais Classes "externas" associadas das APIs das/para as subáreas CONSC e Holoteca principalmente.
 from cons.models  import Consc 
 from corpus.models import Especialidade,Tema
 from holoteca.models import Dominiologia_Atribut, Config_Atribut_ATTR
@@ -77,7 +82,17 @@ class Variavel(models.Model):
 
 # CLASS TERMO
 class Termo_ou_Fraseologismo(models.Model):
-     
+ 
+ 
+ 
+     #Data de Criação/Nome do Terminólogo Fichador
+     # data_criacao = models.DateTimeField(auto_now_add='True' ,blank= 'True', null='True')
+     #autor =  models.ForeignKey(Autor,related_name= 'autor_acerto', blank= 'True', null='True')
+
+     #data_criacao = models.DateTimeField('Data de Criação da Ficha:',blank= 'True', null='True')
+#    autor = models.CharField(max_length=400) 
+     reported_by = models.ForeignKey(User)
+     created_at = models.DateTimeField('Data/Hora de Criação da Ficha:', blank='True', null='True')
      ########O campo Nome de Termiólogo Fichador entra pelo módulo de segurança (horizontal), atualmente no final da lista de campos na tela correspondente a esse modelo no ADMIN
      nome = models.CharField(max_length=150) 
      #Entrada: Ent. - Termo ou Fraseologismo (Lema).
@@ -113,12 +128,7 @@ class Termo_ou_Fraseologismo(models.Model):
 
      #tema = models.ForeignKey(Tema,related_name= 'conscin_acervo', blank= 'True', null='True')
      
-     #Data de Criação/Nome do Terminólogo Fichador
-     # data_criacao = models.DateTimeField(auto_now_add='True' ,blank= 'True', null='True')
-     #autor =  models.ForeignKey(Autor,related_name= 'autor_acerto', blank= 'True', null='True')
-
-     data_criacao = models.DateTimeField('Data Criação/Última Alteração:',blank= 'True', null='True')
-#    autor = models.CharField(max_length=400) 
+ 
      
      def __unicode__(self):
          return self.nome #+  ' / ' + self.especialidade_central.nome + ' / '  + self.idioma_orig.nome + ' / ' # + self.autor.conscin.nome 
