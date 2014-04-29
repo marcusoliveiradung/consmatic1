@@ -137,6 +137,10 @@ class Termo_ou_Fraseologismo(models.Model):
          ordering = ["nome"]
 #        verbose_name = "Termos ou Fraseologismos"
          verbose_name_plural = "Termos ou Fraseologismos"
+         
+         permissions = (
+        ('view_projeto', 'View projeto'),
+        )
 
 #     def was_published_today(self):
 #        return self.data_criacao.date() == datetime.date.today()
@@ -146,6 +150,10 @@ class Termo_ou_Fraseologismo(models.Model):
 #class Termo_ou_FraseologismoForm(ModelForm):
 #    class Meta:
 #        model = Termo_ou_Fraseologismo
+
+
+
+
 
 #-- -----------------------------------------------------
 #-- Table entrada no ACERVO - Fichamento Terminologico
