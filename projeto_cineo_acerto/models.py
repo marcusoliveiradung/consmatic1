@@ -11,7 +11,8 @@ import datetime
 #Importação de referência de Classes externas ( de outras áreas)
 
 #User authentication in Django
-from django.contrib.auth.models import User, Group
+#from django.contrib.auth.models import User, Group
+###Por enquanto está desativada a restrição ( amarração) de acesso/operação, associada ao usuário ou grupo
 
 #Demais Classes "externas" associadas das APIs das/para as subáreas CONSC e Holoteca principalmente.
 
@@ -26,7 +27,7 @@ from holoteca.models import Dominiologia_Atribut, Config_Atribut_ATTR
 #MUTATIONS = [
 #    DeleteField('Secao_Enc', 'verbete')
 #]
-#----------------------
+#----------------------
 
 
 
@@ -92,7 +93,7 @@ class Termo_ou_Fraseologismo(models.Model):
 
      #data_criacao = models.DateTimeField('Data de Criação da Ficha:',blank= 'True', null='True')
 #    autor = models.CharField(max_length=400) 
-     reported_by = models.ForeignKey(User)#Terminologo
+     reported_by = models.CharField('Terminólogo:',max_length=50)#Terminologo
      created_at = models.DateTimeField('Data/Hora de Criação da Ficha:', blank='True', null='True')
      ########O campo Nome de Termiólogo Fichador entra pelo módulo de segurança (horizontal), atualmente no final da lista de campos na tela correspondente a esse modelo no ADMIN
      nome = models.CharField('Entrada - termo ou fraseologismo:', max_length=150) 
