@@ -50,7 +50,7 @@ class TermoEspecialidadeInline(admin.StackedInline):
 class Termo_ou_FraseologismoAdmin(admin.ModelAdmin):
      model =  Termo_ou_Fraseologismo #, Config_Atribut_ATTR]
      list_filter = ['idioma_orig','Tipo_termo', 'especialidade_central'] 
-     list_display = ('nome', 'data_criacao','especialidade_central')
+     list_display = ('nome', 'created_at', 'reported_by')
      #fieldsets
      ##(None,           {'fields': ['data_criacao']}),
         #('data_criacao', {'fields': ['pub_date']}),
