@@ -185,7 +185,7 @@ class Entrada(models.Model):
      #sequencia = models.IntegerField() 
      #paginas = models.IntegerField()
      conteudo= models.CharField(max_length=250,blank= 'True', null='True') 
-#    data_criacao = models.DateTimeField('Data Inicial do Verbete:')
+#    data_criacao = models.DateTimeField('DataData Inicial do Verbete:')
 #    autor = models.CharField(max_length=400) 
      #def __unicode__(self):
      #    return self.termo.nome  + ' /    ' + self.variavel.nome + ' /      '  +  self.conteudo 
