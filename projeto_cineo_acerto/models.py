@@ -125,7 +125,8 @@ class Termo_ou_Fraseologismo(models.Model):
      traduciologia = models.ManyToManyField("self",blank= 'True', null='True') #,related_name= 'traducao'
      #'Termos equivalentes (traduciologia):', 
      #AutoFK - Faz referência 'a própria classe (Termo), instâncias de termos de tradução para o termo.
-     remissiologia = models.ManyToManyField("self",'Remissivas:', blank= 'True', null='True')   #,related_name= 'remissao
+     remissiologia = models.ManyToManyField("self", blank= 'True', null='True')   #,related_name= 'remissao
+     #'Remissivas:',
      #AutoFK - Faz referência 'a própria classe (Termo), instâncias de termos de referência relevantes para o termo.
       
 
