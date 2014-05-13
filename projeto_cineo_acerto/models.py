@@ -93,10 +93,10 @@ class Termo_ou_Fraseologismo(models.Model):
 
      #data_criacao = models.DateTimeField('Data de Criação da Ficha:',blank= 'True', null='True')
 #    autor = models.CharField(max_length=400) 
-     reported_by = models.CharField('Terminólogo:',max_length=50)#Terminologo
+     reported_by = models.CharField('Terminólogo',max_length=50)#Terminologo
      created_at = models.DateTimeField('Data/Hora de Criação da Ficha:', blank='True', null='True')
      ########O campo Nome de Termiólogo Fichador entra pelo módulo de segurança (horizontal), atualmente no final da lista de campos na tela correspondente a esse modelo no ADMIN
-     nome = models.CharField('Entrada - termo ou fraseologismo - (Lema):', max_length=150) 
+     nome = models.CharField('Entrada - termo ou fraseologismo', max_length=150) 
      #Entrada: Ent. - Termo ou Fraseologismo (Lema).
      
      ### Os seguintes attrs saem da classe básica de Terminologia (TERMoS), passando para a CLASSE das VARIÁVEIS:
@@ -115,7 +115,7 @@ class Termo_ou_Fraseologismo(models.Model):
      idioma_orig = models.ForeignKey(Idioma,related_name= 'idioma_acerto', blank= 'True', null='True')
      #'Idioma (da entrada):'
      #FK para Idioma (classe Externa)
-     transc_fonet= models.CharField('Transcrição fonética:',max_length=20, blank= 'True', null='True') 
+     transc_fonet= models.CharField('Transcrição fonética',max_length=20, blank= 'True', null='True') 
      #Transcrição Fonética: Tf.
      
      ### Os seguintes attrs saem da classe básica de Terminologia (TERMoS), passando para a CLASSE das VARIÁVEIS:
