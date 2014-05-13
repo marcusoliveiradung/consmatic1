@@ -96,7 +96,7 @@ class Termo_ou_Fraseologismo(models.Model):
      reported_by = models.CharField('Terminólogo:',max_length=50)#Terminologo
      created_at = models.DateTimeField('Data/Hora de Criação da Ficha:', blank='True', null='True')
      ########O campo Nome de Termiólogo Fichador entra pelo módulo de segurança (horizontal), atualmente no final da lista de campos na tela correspondente a esse modelo no ADMIN
-     nome = models.CharField('Entrada - termo ou fraseologismo:', max_length=150) 
+     nome = models.CharField('Entrada - termo ou fraseologismo - (Lema):', max_length=150) 
      #Entrada: Ent. - Termo ou Fraseologismo (Lema).
      
      ### Os seguintes attrs saem da classe básica de Terminologia (TERMoS), passando para a CLASSE das VARIÁVEIS:
@@ -107,13 +107,13 @@ class Termo_ou_Fraseologismo(models.Model):
      #Redução: Rd. - (Abreviatura: Siglaçãoou acronímia, qdo houver)
      #****************************************************************
      
-     especialidade_central = models.ForeignKey(Especialidade,related_name= 'especialidade_acerto', blank= 'True', null='True')
+     especialidade_central = models.ForeignKey(Especialidade,'Especialidade central (Área Temática):', related_name= 'especialidade_acerto', blank= 'True', null='True')
      #FK para Especialidade (classe Externa) 
-     Tipo_termo = models.CharField(max_length=03, blank= 'True', null='True') 
+     Tipo_termo = models.CharField('Tipo de termo', max_length=03, blank= 'True', null='True') 
      #Tipo do Termo ( ou Fraseologismo). Por enquanto, o domínio é:  TRM - Termo; FRA - Fraselogismo; ESP - Especialidades Conscienciológicas) 
-     idioma_orig = models.ForeignKey(Idioma,related_name= 'idioma_acerto', blank= 'True', null='True')
+     idioma_orig = models.ForeignKey(Idioma,'Idioma (da entrada):',related_name= 'idioma_acerto', blank= 'True', null='True')
      #FK para Idioma (classe Externa)
-     transc_fonet= models.CharField(max_length=20, blank= 'True', null='True') 
+     transc_fonet= models.CharField('Transcrição fonética:',max_length=20, blank= 'True', null='True') 
      #Transcrição Fonética: Tf.
      
      ### Os seguintes attrs saem da classe básica de Terminologia (TERMoS), passando para a CLASSE das VARIÁVEIS:
@@ -122,9 +122,9 @@ class Termo_ou_Fraseologismo(models.Model):
      #Status do Termo: St. (Normalizado - Nor. ou Proposição Neológica - Neo)
      #****************************************************************
      
-     traduciologia = models.ManyToManyField("self", blank= 'True', null='True') #,related_name= 'traducao'
+     traduciologia = models.ManyToManyField("self",'Termos equivalentes (traduciologia):', blank= 'True', null='True') #,related_name= 'traducao'
      #AutoFK - Faz referência 'a própria classe (Termo), instâncias de termos de tradução para o termo.
-     remissiologia = models.ManyToManyField("self", blank= 'True', null='True')   #,related_name= 'remissao
+     remissiologia = models.ManyToManyField("self",'Remissiva', blank= 'True', null='True')   #,related_name= 'remissao
      #AutoFK - Faz referência 'a própria classe (Termo), instâncias de termos de referência relevantes para o termo.
       
 
