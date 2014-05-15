@@ -101,15 +101,13 @@ class Termo_ou_Fraseologismo(models.Model):
      #Data de Criação/Nome do Terminólogo Fichador
      # data_criacao = models.DateTimeField(auto_now_add='True' ,blank= 'True', null='True')
      #autor =  models.ForeignKey(Autor,related_name= 'autor_acerto', blank= 'True', null='True')
-<<<<<<< HEAD
-
      #data_criacao = models.DateTimeField('Data de Criação da Ficha:',blank= 'True', null='True')
 #    autor = models.CharField(max_length=400) 
      reported_by = models.CharField('Terminólogo',max_length=50)#Terminologo
      created_at = models.DateTimeField('Data/Hora de Criação da Ficha:', blank='True', null='True')
      ########O campo Nome de Termiólogo Fichador entra pelo módulo de segurança (horizontal), atualmente no final da lista de campos na tela correspondente a esse modelo no ADMIN
      nome = models.CharField('Entrada - termo ou fraseologismo', max_length=150) 
-=======
+#=======
  
      #data_criacao = models.DateTimeField('Data de Criação da Ficha:',blank= 'True', null='True')
 #    autor = models.CharField(max_length=400)
@@ -117,12 +115,9 @@ class Termo_ou_Fraseologismo(models.Model):
      created_at = models.DateTimeField('Data/Hora de Criação da Ficha:', blank='True', null='True')
      ########O campo Nome de Termiólogo Fichador entra pelo módulo de segurança (horizontal), atualmente no final da lista de campos na tela correspondente a esse modelo no ADMIN
      nome = models.CharField('Entrada - termo ou fraseologismo:', max_length=150)
->>>>>>> 824567140d5133ce2f275cff5b40aa0d4798f096
-     #Entrada: Ent. - Termo ou Fraseologismo (Lema).
-     
+     #Entrada: Ent. - Termo ou Fraseologismo (Lema).     
      ### Os seguintes attrs saem da classe básica de Terminologia (TERMoS), passando para a CLASSE das VARIÁVEIS:
-     #****************************************************************
-<<<<<<< HEAD
+     #***************************************************************<<< HEA
      ##categ_gram = models.CharField(max_length=02, blank= 'True', null='True') 
      #Referência ou Categoria Gramatical : Cat. - Referências Gramativcais (Classe e Gênero)
      ##reducao = models.CharField(max_length=02, blank= 'True', null='True') 
@@ -138,7 +133,7 @@ class Termo_ou_Fraseologismo(models.Model):
      #'Idioma (da entrada):'
      #FK para Idioma (classe Externa)
      transc_fonet= models.CharField('Transcrição fonética',max_length=20, blank= 'True', null='True') 
-=======
+#=======
      ##categ_gram = models.CharField(max_length=02, blank= 'True', null='True')
      #Referência ou Categoria Gramatical : Cat. - Referências Gramativcais (Classe e Gênero)
      ##reducao = models.CharField(max_length=02, blank= 'True', null='True')
@@ -152,7 +147,6 @@ class Termo_ou_Fraseologismo(models.Model):
      idioma_orig = models.ForeignKey(Idioma,related_name= 'idioma_acerto', blank= 'True', null='True')
      #FK para Idioma (classe Externa)
      transc_fonet= models.CharField(max_length=20, blank= 'True', null='True')
->>>>>>> 824567140d5133ce2f275cff5b40aa0d4798f096
      #Transcrição Fonética: Tf.
      
      ### Os seguintes attrs saem da classe básica de Terminologia (TERMoS), passando para a CLASSE das VARIÁVEIS:
@@ -161,7 +155,6 @@ class Termo_ou_Fraseologismo(models.Model):
      #Status do Termo: St. (Normalizado - Nor. ou Proposição Neológica - Neo)
      #****************************************************************
      
-<<<<<<< HEAD
      traduciologia = models.ManyToManyField("self",blank= 'True', null='True') #,related_name= 'traducao'
      #'Termos equivalentes (traduciologia):', 
      #AutoFK - Faz referência 'a própria classe (Termo), instâncias de termos de tradução para o termo.
@@ -170,14 +163,13 @@ class Termo_ou_Fraseologismo(models.Model):
      #AutoFK - Faz referência 'a própria classe (Termo), instâncias de termos de referência relevantes para o termo.
       
 
-=======
+#=======
      traduciologia = models.ManyToManyField("self", blank= 'True', null='True') #,related_name= 'traducao'
      #AutoFK - Faz referência 'a própria classe (Termo), instâncias de termos de tradução para o termo.
      remissiologia = models.ManyToManyField("self", blank= 'True', null='True')   #,related_name= 'remissao
      #AutoFK - Faz referência 'a própria classe (Termo), instâncias de termos de referência relevantes para o termo.
-     
  
->>>>>>> 824567140d5133ce2f275cff5b40aa0d4798f096
+ 
      #tema = models.ForeignKey(Tema,related_name= 'conscin_acervo', blank= 'True', null='True')
      
  
@@ -193,11 +185,6 @@ class Termo_ou_Fraseologismo(models.Model):
          #permissions = (
         #('view_projeto', 'View projeto'),
         #)
-<<<<<<< HEAD
-
-=======
- 
->>>>>>> 824567140d5133ce2f275cff5b40aa0d4798f096
 #     def was_published_today(self):
 #        return self.data_criacao.date() == datetime.date.today()
 #     was_published_today.short_description = 'Published today?'

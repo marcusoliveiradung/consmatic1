@@ -1,6 +1,4 @@
 # _*_ coding: utf8 _*_
- 
-#dir
 from django.db import models
 from django.forms import ModelForm
 from django.core.files import File
@@ -9,16 +7,13 @@ import datetime
  
  
 #Importação de referência de Classes externas ( de outras áreas)
-<<<<<<< HEAD
-
-#User authentication in Django
+# authentication in Django
 #from django.contrib.auth.models import User, Group
 ###Por enquanto está desativada a restrição ( amarração) de acesso/operação, associada ao usuário ou grupo
 
 #Demais Classes "externas" associadas das APIs das/para as subáreas CONSC e Holoteca principalmente.
 
 from cons.models  import Consc 
-=======
  
 #User authentication in Django
 #from django.contrib.auth.models import User, Group
@@ -27,7 +22,6 @@ from cons.models  import Consc
 #Demais Classes "externas" associadas das APIs das/para as subáreas CONSC e Holoteca principalmente.
  
 from cons.models  import Consc
->>>>>>> 824567140d5133ce2f275cff5b40aa0d4798f096
 from corpus.models import Especialidade,Tema
 from holoteca.models import Dominiologia_Atribut, Config_Atribut_ATTR
  
@@ -38,7 +32,7 @@ from holoteca.models import Dominiologia_Atribut, Config_Atribut_ATTR
 #MUTATIONS = [
 #    DeleteField('Secao_Enc', 'verbete')
 #]
-#----------------------
+#----------------------
  
  
  
@@ -101,15 +95,13 @@ class Termo_ou_Fraseologismo(models.Model):
      #Data de Criação/Nome do Terminólogo Fichador
      # data_criacao = models.DateTimeField(auto_now_add='True' ,blank= 'True', null='True')
      #autor =  models.ForeignKey(Autor,related_name= 'autor_acerto', blank= 'True', null='True')
-<<<<<<< HEAD
-
      #data_criacao = models.DateTimeField('Data de Criação da Ficha:',blank= 'True', null='True')
 #    autor = models.CharField(max_length=400) 
      reported_by = models.CharField('Terminólogo',max_length=50)#Terminologo
      created_at = models.DateTimeField('Data/Hora de Criação da Ficha:', blank='True', null='True')
      ########O campo Nome de Termiólogo Fichador entra pelo módulo de segurança (horizontal), atualmente no final da lista de campos na tela correspondente a esse modelo no ADMIN
      nome = models.CharField('Entrada - termo ou fraseologismo', max_length=150) 
-=======
+#=======
  
      #data_criacao = models.DateTimeField('Data de Criação da Ficha:',blank= 'True', null='True')
 #    autor = models.CharField(max_length=400)
@@ -117,12 +109,9 @@ class Termo_ou_Fraseologismo(models.Model):
      created_at = models.DateTimeField('Data/Hora de Criação da Ficha:', blank='True', null='True')
      ########O campo Nome de Termiólogo Fichador entra pelo módulo de segurança (horizontal), atualmente no final da lista de campos na tela correspondente a esse modelo no ADMIN
      nome = models.CharField('Entrada - termo ou fraseologismo:', max_length=150)
->>>>>>> 824567140d5133ce2f275cff5b40aa0d4798f096
-     #Entrada: Ent. - Termo ou Fraseologismo (Lema).
-     
+     #Entrada: Ent. - Termo ou Fraseologismo (Lema).     
      ### Os seguintes attrs saem da classe básica de Terminologia (TERMoS), passando para a CLASSE das VARIÁVEIS:
-     #****************************************************************
-<<<<<<< HEAD
+     #***************************************************************<<< HEA
      ##categ_gram = models.CharField(max_length=02, blank= 'True', null='True') 
      #Referência ou Categoria Gramatical : Cat. - Referências Gramativcais (Classe e Gênero)
      ##reducao = models.CharField(max_length=02, blank= 'True', null='True') 
@@ -138,7 +127,7 @@ class Termo_ou_Fraseologismo(models.Model):
      #'Idioma (da entrada):'
      #FK para Idioma (classe Externa)
      transc_fonet= models.CharField('Transcrição fonética',max_length=20, blank= 'True', null='True') 
-=======
+#=======
      ##categ_gram = models.CharField(max_length=02, blank= 'True', null='True')
      #Referência ou Categoria Gramatical : Cat. - Referências Gramativcais (Classe e Gênero)
      ##reducao = models.CharField(max_length=02, blank= 'True', null='True')
@@ -152,7 +141,6 @@ class Termo_ou_Fraseologismo(models.Model):
      idioma_orig = models.ForeignKey(Idioma,related_name= 'idioma_acerto', blank= 'True', null='True')
      #FK para Idioma (classe Externa)
      transc_fonet= models.CharField(max_length=20, blank= 'True', null='True')
->>>>>>> 824567140d5133ce2f275cff5b40aa0d4798f096
      #Transcrição Fonética: Tf.
      
      ### Os seguintes attrs saem da classe básica de Terminologia (TERMoS), passando para a CLASSE das VARIÁVEIS:
@@ -161,7 +149,6 @@ class Termo_ou_Fraseologismo(models.Model):
      #Status do Termo: St. (Normalizado - Nor. ou Proposição Neológica - Neo)
      #****************************************************************
      
-<<<<<<< HEAD
      traduciologia = models.ManyToManyField("self",blank= 'True', null='True') #,related_name= 'traducao'
      #'Termos equivalentes (traduciologia):', 
      #AutoFK - Faz referência 'a própria classe (Termo), instâncias de termos de tradução para o termo.
@@ -170,19 +157,16 @@ class Termo_ou_Fraseologismo(models.Model):
      #AutoFK - Faz referência 'a própria classe (Termo), instâncias de termos de referência relevantes para o termo.
       
 
-=======
+#=======
      traduciologia = models.ManyToManyField("self", blank= 'True', null='True') #,related_name= 'traducao'
      #AutoFK - Faz referência 'a própria classe (Termo), instâncias de termos de tradução para o termo.
      remissiologia = models.ManyToManyField("self", blank= 'True', null='True')   #,related_name= 'remissao
      #AutoFK - Faz referência 'a própria classe (Termo), instâncias de termos de referência relevantes para o termo.
-     
  
->>>>>>> 824567140d5133ce2f275cff5b40aa0d4798f096
+ 
      #tema = models.ForeignKey(Tema,related_name= 'conscin_acervo', blank= 'True', null='True')
      
- 
-     
-     def __unicode__(self):
+      def __unicode__(self):
          return self.nome #+  ' / ' + self.especialidade_central.nome + ' / '  + self.idioma_orig.nome + ' / ' # + self.autor.conscin.nome
  
      class Meta:
@@ -193,11 +177,6 @@ class Termo_ou_Fraseologismo(models.Model):
          #permissions = (
         #('view_projeto', 'View projeto'),
         #)
-<<<<<<< HEAD
-
-=======
- 
->>>>>>> 824567140d5133ce2f275cff5b40aa0d4798f096
 #     def was_published_today(self):
 #        return self.data_criacao.date() == datetime.date.today()
 #     was_published_today.short_description = 'Published today?'
@@ -206,19 +185,7 @@ class Termo_ou_Fraseologismo(models.Model):
 #class Termo_ou_FraseologismoForm(ModelForm):
 #    class Meta:
 #        model = Termo_ou_Fraseologismo
-<<<<<<< HEAD
 
-
-
-
-
-=======
- 
- 
- 
- 
- 
->>>>>>> 824567140d5133ce2f275cff5b40aa0d4798f096
 #-- -----------------------------------------------------
 #-- Table entrada no ACERVO - Fichamento Terminologico
 #------------------------------------
@@ -242,70 +209,20 @@ class Entrada(models.Model):
      #item_basico = models.IntegerField()
      #sequencia = models.IntegerField()
      #paginas = models.IntegerField()
-<<<<<<< HEAD
      conteudo= models.CharField(max_length=250,blank= 'True', null='True') 
 #    data_criacao = models.DateTimeField('DataData Inicial do Verbete:')
 #    autor = models.CharField(max_length=400) 
      #def __unicode__(self):
-     #    return self.termo.nome  + ' /    ' + self.variavel.nome + ' /      '  +  self.conteudo 
-=======
-     conteudo= models.TextField(blank= 'True', null='True')
+     #    return self.termo.nome  + ' /    ' + self.variavel.nome + ' /      '  + self.conteudo      conteudo= models.TextField(blank= 'True', null='True')
 #    data_criacao = models.DateTimeField('Data Inicial do Verbete:')
 #    autor = models.CharField(max_length=400)
      #def __unicode__(self):
      #    return self.termo.nome  + ' /    ' + self.variavel.nome + ' /      '  +  self.conteudo
->>>>>>> 824567140d5133ce2f275cff5b40aa0d4798f096
      
      class Meta:
          #ordering = ["sequencia"]
-         verbose_name = " "#"ICHA do TERMO ou FRASEOLOGISMO CONSCIENCIOLÓGICO:"
-<<<<<<< HEAD
+         verbose_name = "FICHA do TERMO ou FRASEOLOGISMO CONSCIENCIOLÓGICO:"
          verbose_name_plural = "FICHAMENTO do TERMO ou FRASEOLOGISMO CONSCIENCIOLÓGICO:" 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-=======
-         verbose_name_plural = "FICHAMENTO do TERMO ou FRASEOLOGISMO CONSCIENCIOLÓGICO:"
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
->>>>>>> 824567140d5133ce2f275cff5b40aa0d4798f096
 #  `verbetografo` INT(11) NULL DEFAULT '0' ,
 #  `arquivo_doc_size` INT(11) NOT NULL DEFAULT '0' ,
 #  `arquivo_doc` MEDIUMBLOB NULL DEFAULT NULL ,
@@ -330,8 +247,4 @@ class Entrada(models.Model):
  
  
 #NOVAS CLASSES
-<<<<<<< HEAD
-=======
 
-
->>>>>>> 824567140d5133ce2f275cff5b40aa0d4798f096
